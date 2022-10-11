@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FruitApp;
+using FruitApp.Forms.Manage;
 
 namespace FruitApp
 {
@@ -24,8 +25,8 @@ namespace FruitApp
             mnp1.MdiParent = frm_MainPage_Admin.ActiveForm;
             mnp1.Show();
             tstr_Admin.Enabled = false;
-            mnstr_Admin.Enabled = false;
-
+            mnstr_System_Admin.Enabled = false;
+            mnstr_Statistic.Enabled = false;
         }
 
         private void tsbtn_ManageOrder_Click(object sender, EventArgs e)
@@ -34,16 +35,8 @@ namespace FruitApp
             mno1.MdiParent = frm_MainPage_Admin.ActiveForm;
             mno1.Show();
             tstr_Admin.Enabled = false;
-            mnstr_Admin.Enabled = false;
-        }
-
-        private void tsbtn_ManageWareHouse_Click(object sender, EventArgs e)
-        {
-            frm_ManageWareHouse mnw1 = new frm_ManageWareHouse();
-            mnw1.MdiParent = frm_MainPage_Admin.ActiveForm;
-            mnw1.Show();
-            tstr_Admin.Enabled = false;
-            mnstr_Admin.Enabled = false;
+            mnstr_System_Admin.Enabled = false;
+            mnstr_Statistic.Enabled = false;
         }
 
         private void tsbtn_ManageSuplier_Click(object sender, EventArgs e)
@@ -52,7 +45,8 @@ namespace FruitApp
             mns1.MdiParent = frm_MainPage_Admin.ActiveForm;
             mns1.Show();
             tstr_Admin.Enabled = false;
-            mnstr_Admin.Enabled = false;
+            mnstr_System_Admin.Enabled = false;
+            mnstr_Statistic.Enabled = false;
         }
 
         private void tsbtn_ManageEmployee_Click(object sender, EventArgs e)
@@ -61,7 +55,8 @@ namespace FruitApp
             mne1.MdiParent = frm_MainPage_Admin.ActiveForm;
             mne1.Show();
             tstr_Admin.Enabled = false;
-            mnstr_Admin.Enabled = false;
+            mnstr_System_Admin.Enabled = false;
+            mnstr_Statistic.Enabled = false;
         }
 
         private void tsbtn_ManageUserAccount_Click(object sender, EventArgs e)
@@ -70,7 +65,8 @@ namespace FruitApp
             mnua1.MdiParent = frm_MainPage_Admin.ActiveForm;
             mnua1.Show();
             tstr_Admin.Enabled = false;
-            mnstr_Admin.Enabled = false;
+            mnstr_System_Admin.Enabled = false;
+            mnstr_Statistic.Enabled = false;
         }
 
         private void tsbtn_Statistic_Click(object sender, EventArgs e)
@@ -79,19 +75,20 @@ namespace FruitApp
             sts.MdiParent = frm_MainPage_Admin.ActiveForm;
             sts.Show();
             tstr_Admin.Enabled = false;
-            mnstr_Admin.Enabled = false;
+            mnstr_System_Admin.Enabled = false;
+            mnstr_Statistic.Enabled = false;
         }
 
         private void tsbtn_Exit_Click(object sender, EventArgs e)
         {
-            this.Owner.Close();
-            this.Close();
+            Application.Exit();
         }
 
         internal void frm_MainPage_Admin_Load(object sender, EventArgs e)
         {
             tstr_Admin.Enabled = true;
-            mnstr_Admin.Enabled = true;
+            mnstr_System_Admin.Enabled = true;
+            mnstr_Statistic.Enabled = true;
         }
 
         private void tstr_LogOut_Click(object sender, EventArgs e)

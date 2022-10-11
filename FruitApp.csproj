@@ -33,7 +33,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.Desktop.v22.1, Version=22.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v22.1, Version=22.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Drawing.v22.1, Version=22.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v22.1, Version=22.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Map.v22.1.Core, Version=22.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v22.1.Core, Version=22.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v22.1, Version=22.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v22.1, Version=22.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v22.1, Version=22.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v22.1, Version=22.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v22.1, Version=22.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraMap.v22.1, Version=22.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v22.1, Version=22.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v22.1, Version=22.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -57,6 +72,12 @@
     </Compile>
     <Compile Include="Forms\MainPage\frm_MainPage_User.Designer.cs">
       <DependentUpon>frm_MainPage_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Manage\frm_ManageEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Manage\frm_ManageEmployee.Designer.cs">
+      <DependentUpon>frm_ManageEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Manage\frm_ManageOrder.cs">
       <SubType>Form</SubType>
@@ -94,12 +115,6 @@
     <Compile Include="Forms\MainPage\frm_MainPage_Admin.Designer.cs">
       <DependentUpon>frm_MainPage_Admin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Manage\frm_ManageEmployee.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Manage\frm_ManageEmployee.Designer.cs">
-      <DependentUpon>frm_ManageEmployee.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Manage\frm_ManageProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,12 +126,6 @@
     </Compile>
     <Compile Include="Forms\Manage\frm_ManageUserAccount.Designer.cs">
       <DependentUpon>frm_ManageUserAccount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Manage\frm_ManageWareHouse.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Manage\frm_ManageWareHouse.Designer.cs">
-      <DependentUpon>frm_ManageWareHouse.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frm_Statistic.cs">
       <SubType>Form</SubType>
@@ -153,9 +162,7 @@
     <EmbeddedResource Include="Forms\Manage\frm_ManageUserAccount.resx">
       <DependentUpon>frm_ManageUserAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Manage\frm_ManageWareHouse.resx">
-      <DependentUpon>frm_ManageWareHouse.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
