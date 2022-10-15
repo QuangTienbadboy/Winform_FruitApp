@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FruitApp
+namespace FruitApp.Forms.Manage
 {
     public partial class frm_ManageEmployee : Form
     {
@@ -21,5 +21,6 @@ namespace FruitApp
         {
             ((frm_MainPage_Admin)this.MdiParent).frm_MainPage_Admin_Load(sender, e);
         }
+
     }
 }

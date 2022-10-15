@@ -21,5 +21,11 @@ namespace FruitApp
         {
             ((frm_MainPage_Admin)this.MdiParent).frm_MainPage_Admin_Load(sender, e);
         }
+
+        private void frm_ManageOrder_Load(object sender, EventArgs e)
+        {
+            dtpck_NgayOrder.MaxDate = DateTime.Now;
+            dtpck_NgayOrder.MinDate = new DateTime(2022,01,01);
+        }
     }
 }

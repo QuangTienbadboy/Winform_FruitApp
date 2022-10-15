@@ -16,7 +16,7 @@ namespace FruitApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_SignIn());
+            Application.Run(new frm_MainPage_Admin());
         }
     }
 }
