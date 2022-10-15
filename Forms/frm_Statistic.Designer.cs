@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "frm_Statistic";
-            this.Text = "frm_Statistic";
+            this.Text = "Thống Kê";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm_Statistic_FormClosed);
             this.ResumeLayout(false);
 
