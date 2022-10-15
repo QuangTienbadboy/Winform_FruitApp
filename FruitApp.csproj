@@ -112,12 +112,6 @@
     <Compile Include="Forms\Manage\frm_ManageUserAccount.Designer.cs">
       <DependentUpon>frm_ManageUserAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Manage\frm_ManageWareHouse.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Manage\frm_ManageWareHouse.Designer.cs">
-      <DependentUpon>frm_ManageWareHouse.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\frm_Statistic.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,9 +146,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Manage\frm_ManageUserAccount.resx">
       <DependentUpon>frm_ManageUserAccount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Manage\frm_ManageWareHouse.resx">
-      <DependentUpon>frm_ManageWareHouse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

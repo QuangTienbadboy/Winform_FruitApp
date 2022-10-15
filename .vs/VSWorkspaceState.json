@@ -1,8 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+<<<<<<< HEAD
     "\\Forms"
   ],
   "SelectedNode": "\\FruitApp.sln",
+=======
+    "\\Forms",
+    "\\Forms\\MainPage",
+    "\\Forms\\Manage"
+  ],
+  "SelectedNode": "\\Forms\\Manage\\frm_ManageProduct.cs",
+>>>>>>> c22e5a39921815c4b480d67e1584fa894bd14d47
   "PreviewInSolutionExplorer": false
 }
