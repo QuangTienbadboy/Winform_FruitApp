@@ -30,6 +30,12 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_Order = new System.Windows.Forms.DataGridView();
+            this.clm_MDH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_NguoiDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_ChiTiet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_NgayDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_DiaChiGiao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grb_Status = new System.Windows.Forms.GroupBox();
             this.cbx_DaHuy = new System.Windows.Forms.CheckBox();
             this.cbx_HoanThanh = new System.Windows.Forms.CheckBox();
@@ -45,13 +51,7 @@
             this.dtpck_NgayOrder = new System.Windows.Forms.DateTimePicker();
             this.tb_MaDonHang = new System.Windows.Forms.TextBox();
             this.lb_MaDonHang = new System.Windows.Forms.Label();
-            this.btn_Confirm = new System.Windows.Forms.Button();
-            this.clm_MDH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_NguoiDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_ChiTiet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_NgayDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_DiaChiGiao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_ChangeStatus = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Order)).BeginInit();
             this.grb_Status.SuspendLayout();
             this.grb_SoLuongDonHang.SuspendLayout();
@@ -84,6 +84,58 @@
             this.dgv_Order.Size = new System.Drawing.Size(1924, 600);
             this.dgv_Order.TabIndex = 0;
             this.dgv_Order.TabStop = false;
+            // 
+            // clm_MDH
+            // 
+            this.clm_MDH.HeaderText = "Mã Đơn Hàng";
+            this.clm_MDH.MinimumWidth = 125;
+            this.clm_MDH.Name = "clm_MDH";
+            this.clm_MDH.ReadOnly = true;
+            this.clm_MDH.Width = 125;
+            // 
+            // clm_NguoiDat
+            // 
+            this.clm_NguoiDat.HeaderText = "Người Đặt";
+            this.clm_NguoiDat.MinimumWidth = 125;
+            this.clm_NguoiDat.Name = "clm_NguoiDat";
+            this.clm_NguoiDat.ReadOnly = true;
+            this.clm_NguoiDat.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.clm_NguoiDat.Width = 125;
+            // 
+            // clm_ChiTiet
+            // 
+            this.clm_ChiTiet.HeaderText = "Chi Tiết Đơn Hàng";
+            this.clm_ChiTiet.MinimumWidth = 250;
+            this.clm_ChiTiet.Name = "clm_ChiTiet";
+            this.clm_ChiTiet.ReadOnly = true;
+            this.clm_ChiTiet.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.clm_ChiTiet.Width = 750;
+            // 
+            // clm_NgayDat
+            // 
+            this.clm_NgayDat.HeaderText = "Ngày Đặt Hàng";
+            this.clm_NgayDat.MinimumWidth = 125;
+            this.clm_NgayDat.Name = "clm_NgayDat";
+            this.clm_NgayDat.ReadOnly = true;
+            this.clm_NgayDat.Width = 150;
+            // 
+            // clm_DiaChiGiao
+            // 
+            this.clm_DiaChiGiao.HeaderText = "Địa Chỉ Giao";
+            this.clm_DiaChiGiao.MinimumWidth = 125;
+            this.clm_DiaChiGiao.Name = "clm_DiaChiGiao";
+            this.clm_DiaChiGiao.ReadOnly = true;
+            this.clm_DiaChiGiao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.clm_DiaChiGiao.Width = 200;
+            // 
+            // clm_TrangThai
+            // 
+            this.clm_TrangThai.HeaderText = "Trạng Thái";
+            this.clm_TrangThai.MinimumWidth = 125;
+            this.clm_TrangThai.Name = "clm_TrangThai";
+            this.clm_TrangThai.ReadOnly = true;
+            this.clm_TrangThai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.clm_TrangThai.Width = 125;
             // 
             // grb_Status
             // 
@@ -238,74 +290,22 @@
             this.lb_MaDonHang.TabIndex = 5;
             this.lb_MaDonHang.Text = "Nhập Mã Đơn Hàng:";
             // 
-            // btn_Confirm
+            // btn_ChangeStatus
             // 
-            this.btn_Confirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Confirm.Location = new System.Drawing.Point(899, 181);
-            this.btn_Confirm.Name = "btn_Confirm";
-            this.btn_Confirm.Size = new System.Drawing.Size(119, 43);
-            this.btn_Confirm.TabIndex = 6;
-            this.btn_Confirm.Text = "Xác Nhận";
-            this.btn_Confirm.UseVisualStyleBackColor = true;
-            // 
-            // clm_MDH
-            // 
-            this.clm_MDH.HeaderText = "Mã Đơn Hàng";
-            this.clm_MDH.MinimumWidth = 125;
-            this.clm_MDH.Name = "clm_MDH";
-            this.clm_MDH.ReadOnly = true;
-            this.clm_MDH.Width = 125;
-            // 
-            // clm_NguoiDat
-            // 
-            this.clm_NguoiDat.HeaderText = "Người Đặt";
-            this.clm_NguoiDat.MinimumWidth = 125;
-            this.clm_NguoiDat.Name = "clm_NguoiDat";
-            this.clm_NguoiDat.ReadOnly = true;
-            this.clm_NguoiDat.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.clm_NguoiDat.Width = 125;
-            // 
-            // clm_ChiTiet
-            // 
-            this.clm_ChiTiet.HeaderText = "Chi Tiết Đơn Hàng";
-            this.clm_ChiTiet.MinimumWidth = 250;
-            this.clm_ChiTiet.Name = "clm_ChiTiet";
-            this.clm_ChiTiet.ReadOnly = true;
-            this.clm_ChiTiet.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.clm_ChiTiet.Width = 750;
-            // 
-            // clm_NgayDat
-            // 
-            this.clm_NgayDat.HeaderText = "Ngày Đặt Hàng";
-            this.clm_NgayDat.MinimumWidth = 125;
-            this.clm_NgayDat.Name = "clm_NgayDat";
-            this.clm_NgayDat.ReadOnly = true;
-            this.clm_NgayDat.Width = 150;
-            // 
-            // clm_DiaChiGiao
-            // 
-            this.clm_DiaChiGiao.HeaderText = "Địa Chỉ Giao";
-            this.clm_DiaChiGiao.MinimumWidth = 125;
-            this.clm_DiaChiGiao.Name = "clm_DiaChiGiao";
-            this.clm_DiaChiGiao.ReadOnly = true;
-            this.clm_DiaChiGiao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.clm_DiaChiGiao.Width = 200;
-            // 
-            // clm_TrangThai
-            // 
-            this.clm_TrangThai.HeaderText = "Trạng Thái";
-            this.clm_TrangThai.MinimumWidth = 125;
-            this.clm_TrangThai.Name = "clm_TrangThai";
-            this.clm_TrangThai.ReadOnly = true;
-            this.clm_TrangThai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.clm_TrangThai.Width = 125;
+            this.btn_ChangeStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ChangeStatus.Location = new System.Drawing.Point(846, 181);
+            this.btn_ChangeStatus.Name = "btn_ChangeStatus";
+            this.btn_ChangeStatus.Size = new System.Drawing.Size(220, 43);
+            this.btn_ChangeStatus.TabIndex = 6;
+            this.btn_ChangeStatus.Text = "Thay Đổi Trạng Thái";
+            this.btn_ChangeStatus.UseVisualStyleBackColor = true;
             // 
             // frm_ManageOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 861);
-            this.Controls.Add(this.btn_Confirm);
+            this.Controls.Add(this.btn_ChangeStatus);
             this.Controls.Add(this.lb_MaDonHang);
             this.Controls.Add(this.tb_MaDonHang);
             this.Controls.Add(this.dtpck_NgayOrder);
@@ -345,7 +345,7 @@
         private System.Windows.Forms.DateTimePicker dtpck_NgayOrder;
         private System.Windows.Forms.TextBox tb_MaDonHang;
         private System.Windows.Forms.Label lb_MaDonHang;
-        private System.Windows.Forms.Button btn_Confirm;
+        private System.Windows.Forms.Button btn_ChangeStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_MDH;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_NguoiDat;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_ChiTiet;

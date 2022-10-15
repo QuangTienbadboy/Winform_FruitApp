@@ -181,14 +181,14 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Assets\Images\icons8-bussiness-man-64.png" />
-    <Content Include="Assets\Images\icons8-close-48.png" />
-    <Content Include="Assets\Images\icons8-employees-64.png" />
-    <Content Include="Assets\Images\icons8-fruit-58.png" />
-    <Content Include="Assets\Images\icons8-graphs-64.png" />
-    <Content Include="Assets\Images\icons8-shopping-cart-48.png" />
-    <Content Include="Assets\Images\icons8-user-48.png" />
-    <Content Include="Assets\Images\icons8-warehouse-64.png" />
+    <Content Include="Assets\Images\Icons\icons8-bussiness-man-64.png" />
+    <Content Include="Assets\Images\Icons\icons8-close-48.png" />
+    <Content Include="Assets\Images\Icons\icons8-employees-64.png" />
+    <Content Include="Assets\Images\Icons\icons8-fruit-58.png" />
+    <Content Include="Assets\Images\Icons\icons8-graphs-64.png" />
+    <Content Include="Assets\Images\Icons\icons8-shopping-cart-48.png" />
+    <Content Include="Assets\Images\Icons\icons8-user-48.png" />
+    <Content Include="Assets\Images\Icons\icons8-warehouse-64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
