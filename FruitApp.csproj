@@ -112,12 +112,6 @@
     <Compile Include="Forms\Manage\frm_ManageUserAccount.Designer.cs">
       <DependentUpon>frm_ManageUserAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Manage\frm_ManageWareHouse.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Manage\frm_ManageWareHouse.Designer.cs">
-      <DependentUpon>frm_ManageWareHouse.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\frm_Statistic.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,9 +147,6 @@
     <EmbeddedResource Include="Forms\Manage\frm_ManageUserAccount.resx">
       <DependentUpon>frm_ManageUserAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Manage\frm_ManageWareHouse.resx">
-      <DependentUpon>frm_ManageWareHouse.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -189,6 +180,19 @@
     <Content Include="Assets\Images\Icons\icons8-shopping-cart-48.png" />
     <Content Include="Assets\Images\Icons\icons8-user-48.png" />
     <Content Include="Assets\Images\Icons\icons8-warehouse-64.png" />
+    <Content Include="Assets\Images\KhachHang\KH0001.png" />
+    <Content Include="Assets\Images\NhanVien\NV0001.png" />
+    <Content Include="Assets\Images\TraiCay\CA0001.jpg" />
+    <Content Include="Assets\Images\TraiCay\CA0002.jpg" />
+    <Content Include="Assets\Images\TraiCay\CH0001.jpg" />
+    <Content Include="Assets\Images\TraiCay\CH0002.jpg" />
+    <Content Include="Assets\Images\TraiCay\TDH001.jpg" />
+    <Content Include="Assets\Images\TraiCay\TDH002.jpg" />
+    <Content Include="Assets\Images\TraiCay\DL0001.jpg" />
+    <Content Include="Assets\Images\TraiCay\NH0001.jpg" />
+    <Content Include="Assets\Images\TraiCay\TA0001.jpg" />
+    <Content Include="Assets\Images\TraiCay\TA0002.jpg" />
+    <Content Include="Assets\Images\TraiCay\TA0003.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
