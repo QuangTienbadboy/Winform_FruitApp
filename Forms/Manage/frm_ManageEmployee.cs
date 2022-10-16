@@ -143,7 +143,7 @@ namespace FruitApp.Forms.Manage
         {
             string s = "NV";
             int temp = 1+(int.Parse(lastMaNV[5].ToString()) + int.Parse(lastMaNV[4].ToString())*10
-                + int.Parse(lastMaNV[3].ToString())*11 + int.Parse(lastMaNV[2].ToString())*12);
+                + int.Parse(lastMaNV[3].ToString())*100 + int.Parse(lastMaNV[2].ToString())*1000);
             if(temp < 1000)
             {
                 s += "0";
@@ -188,8 +188,7 @@ namespace FruitApp.Forms.Manage
             frm_ThongTin_Employee f = new frm_ThongTin_Employee();
             f.Owner = this;
             f.lb_CapNhat.Visible = false;
-            string lastMaNV = ctx.NhanViens.Max(p => p.MaNhanVien);
-            f.tb_MaNV.Text = newMaNV(lastMaNV);
+            f.tb_MaNV.Text = newMaNV(ctx.NhanViens.Max(p => p.MaNhanVien));
             f.ShowDialog();
             if(f.ans == 1)
             {
@@ -225,7 +224,8 @@ namespace FruitApp.Forms.Manage
             f.tb_NgayBD.Text = nv.NgayBatDauLamViec.ToShortDateString();
             f.tb_NgaySinh.Text = nv.NgaySinh.ToShortDateString();
             f.tb_TenNV.Text = nv.TenNhanVien;
-            f.cb_CV.Text = nv.ChucVu;
+            f.loadCombobox();
+            f.cb_CV.SelectedItem = nv.ChucVu;
             f.rtbx_GhiChu.Text = nv.GhiChu;
             if (nv.HinhAnh != null)
             {

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_SP = new System.Windows.Forms.DataGridView();
             this.lb_MaTraiCay = new System.Windows.Forms.Label();
             this.lb_TenTraiCay = new System.Windows.Forms.Label();
@@ -61,14 +61,14 @@
             this.clm_GiaBan,
             this.clm_GiaMua,
             this.clm_TonKho});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_SP.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_SP.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_SP.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgv_SP.Location = new System.Drawing.Point(0, 338);
             this.dgv_SP.Name = "dgv_SP";
@@ -78,6 +78,7 @@
             this.dgv_SP.Size = new System.Drawing.Size(1924, 717);
             this.dgv_SP.TabIndex = 0;
             this.dgv_SP.TabStop = false;
+            this.dgv_SP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_SP_CellClick);
             // 
             // lb_MaTraiCay
             // 
@@ -149,9 +150,11 @@
             this.btn_ThemSanPham.TabIndex = 7;
             this.btn_ThemSanPham.Text = "Thêm Trái Cây";
             this.btn_ThemSanPham.UseVisualStyleBackColor = true;
+            this.btn_ThemSanPham.Click += new System.EventHandler(this.btn_ThemSanPham_Click);
             // 
             // btn_SuaSanPham
             // 
+            this.btn_SuaSanPham.Enabled = false;
             this.btn_SuaSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SuaSanPham.Location = new System.Drawing.Point(1486, 52);
             this.btn_SuaSanPham.Name = "btn_SuaSanPham";
@@ -159,6 +162,7 @@
             this.btn_SuaSanPham.TabIndex = 8;
             this.btn_SuaSanPham.Text = "Sửa Thông Tin";
             this.btn_SuaSanPham.UseVisualStyleBackColor = true;
+            this.btn_SuaSanPham.Click += new System.EventHandler(this.btn_SuaSanPham_Click);
             // 
             // btn_Import
             // 

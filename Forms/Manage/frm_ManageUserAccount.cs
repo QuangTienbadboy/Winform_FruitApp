@@ -98,6 +98,7 @@ namespace FruitApp
             btn_Huy.Visible = true;
             btn_Luu.Visible = true;
             dgv_KhachHang.Enabled = false;
+            tb_NgaySinh.Clear();
         }
 
         private void btn_Huy_Click(object sender, EventArgs e)
@@ -109,26 +110,34 @@ namespace FruitApp
             btn_Huy.Visible = false;
             btn_Luu.Visible = false;
             dgv_KhachHang.Enabled = true;
+            tb_NgaySinh.Clear();
         }
 
         private void dtpck_ChonNgay_ValueChanged(object sender, EventArgs e)
         {
-            tb_NgaySinh.Text = dtpck_ChonNgay.Value.ToShortDateString();
+            tb_NgaySinh.Text = dtpck_ChonNgay.Value.ToString("dd-MM-yyyy");
         }
 
         private void btn_Luu_Click(object sender, EventArgs e)
         {
-            FruitAppContext ctx = new FruitAppContext();
-            TaiKhoanKhachHang user = ctx.TaiKhoanKhachHangs.FirstOrDefault(p => p.MaKhachHang == MaKH);
-            user.KhachHang.HoTen = tb_TenKhachHang.Text;
-            if(tb_NgaySinh != null)
-                user.KhachHang.NgaySinh = dtpck_ChonNgay.Value;
-            user.KhachHang.DiaChi = tb_DiaChi.Text;
-            user.KhachHang.DienThoai = tb_DienThoai.Text;
-            ctx.SaveChanges();
-            MessageBox.Show("Thay đổi thành công", "Thông Báo");
-            btn_Huy_Click(sender, e);
-            frm_ManageUserAccount_Load(sender, e);
+            if (tb_TenKhachHang.Text == "")
+            {
+                MessageBox.Show("Tên khách hàng không được phép để trống", "Thông Báo");
+            }
+            else
+            {
+                FruitAppContext ctx = new FruitAppContext();
+                TaiKhoanKhachHang user = ctx.TaiKhoanKhachHangs.FirstOrDefault(p => p.MaKhachHang == MaKH);
+                user.KhachHang.HoTen = tb_TenKhachHang.Text;
+                if (tb_NgaySinh != null)
+                    user.KhachHang.NgaySinh = dtpck_ChonNgay.Value;
+                user.KhachHang.DiaChi = tb_DiaChi.Text;
+                user.KhachHang.DienThoai = tb_DienThoai.Text;
+                ctx.SaveChanges();
+                MessageBox.Show("Thay đổi thành công", "Thông Báo");
+                btn_Huy_Click(sender, e);
+                frm_ManageUserAccount_Load(sender, e);
+            }
         }
     }
 }

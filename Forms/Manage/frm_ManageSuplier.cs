@@ -41,6 +41,7 @@ namespace FruitApp
             loadDataGridView();
             btn_Sua.Enabled = false;
             dtpck_ChonNgay.MinDate = new DateTime(2022, 10, 01);
+            dtpck_ChonNgay.MaxDate = DateTime.Now;
         }
 
         private string SelectedMaDT = "";
@@ -155,31 +156,31 @@ namespace FruitApp
         {
             try
             {
-                string s = "Các thông tin sau không được để trống:\n";
+                string s = "Các thông tin sau không được để trống:";
                 bool flag = false;
                 if (tb_MaDoiTac.Text == "")
                 {
-                    s = s + "Mã đối tác\n";
+                    s = s + "\nMã đối tác";
                     flag = true;
                 }
                 if (tb_TenDoiTac.Text == "")
                 {
-                    s = s + "Tên đối tác\n";
+                    s = s + "\nTên đối tác";
                     flag = true;
                 }
                 if (tb_DiaChi.Text == "")
                 {
-                    s = s + "Địa chỉ\n";
+                    s = s + "\nĐịa chỉ";
                     flag = true;
                 }
                 if (tb_DienThoai.Text == "")
                 {
-                    s = s + "Điện thoại\n";
+                    s = s + "\nĐiện thoại";
                     flag = true;
                 }
                 if (tb_NgayHopTac.Text == "")
                 {
-                    s = s + "Ngày hợp tác";
+                    s = s + "\nNgày hợp tác";
                 }
                 if (flag == true)
                 {
@@ -218,6 +219,7 @@ namespace FruitApp
                         ctx.SaveChanges();
                         MessageBox.Show("Thay đổi thông tin đối tác thành công", "Thông Báo");
                     }
+                    xoa();
                     An();
                     frm_ManageSuplier_Load(sender, e);
                 }
@@ -235,7 +237,7 @@ namespace FruitApp
 
         private void dtpck_ChonNgay_ValueChanged(object sender, EventArgs e)
         {
-            tb_NgayHopTac.Text = dtpck_ChonNgay.Value.ToShortDateString();
+            tb_NgayHopTac.Text = dtpck_ChonNgay.Value.ToString("dd-MM-yyyy");
         }
     }
 }

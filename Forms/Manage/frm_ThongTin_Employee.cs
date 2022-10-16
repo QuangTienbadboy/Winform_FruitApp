@@ -18,7 +18,7 @@ namespace FruitApp.Forms.Manage
             InitializeComponent();
         }
 
-        private void loadCombobox()
+        internal void loadCombobox()
         {
             cb_CV.Items.Add("Quản Lý");
             cb_CV.Items.Add("Nhân Viên Kho");
@@ -29,7 +29,12 @@ namespace FruitApp.Forms.Manage
 
         private void frm_ThongTin_Employee_Load(object sender, EventArgs e)
         {
-            loadCombobox();
+            dtpck_NgayBD.MinDate = new DateTime(2022, 10, 01);
+            dtpck_NgayBD.MaxDate = DateTime.Now;
+            dtpck_NgaySinh.MinDate = new DateTime(DateTime.Now.Year - 65, DateTime.Now.Month, DateTime.Now.Day);
+            dtpck_NgaySinh.MaxDate = new DateTime(DateTime.Now.Year - 18, DateTime.Now.Month, DateTime.Now.Day);
+            tb_NgaySinh.Clear();
+            tb_NgayBD.Clear();
         }
 
         internal int ans = 0;
@@ -39,31 +44,31 @@ namespace FruitApp.Forms.Manage
         {
             try
             {
-                string s = "Các thông tin sau không được để trống:\n";
+                string s = "Các thông tin sau không được để trống:";
                 bool flag = false;
                 if(tb_TenNV.Text == "")
                 {
-                    s = s + "Tên nhân viên\n";
+                    s = s + "\nTên nhân viên";
                     flag = true;
                 }
                 if (tb_NgaySinh.Text == "")
                 {
-                    s = s + "Ngày sinh\n";
+                    s = s + "\nNgày sinh";
                     flag = true;
                 }
                 if (tb_DiaChi.Text == "")
                 {
-                    s = s + "Địa chỉ\n";
+                    s = s + "\nĐịa chỉ";
                     flag = true;
                 }
                 if (tb_DienThoai.Text == "")
                 {
-                    s = s + "Tên nhân viên\n";
+                    s = s + "\nTên nhân viên";
                     flag = true;
                 }
                 if (tb_NgayBD.Text == "")
                 {
-                    s = s + "Ngày bắt đầu làm việc\n";
+                    s = s + "\nNgày bắt đầu làm việc";
                     flag = true;
                 }
                 if (flag == true)
@@ -96,6 +101,16 @@ namespace FruitApp.Forms.Manage
                     image = ofd.FileName;
                 }
             }
+        }
+
+        private void dtpck_NgaySinh_ValueChanged(object sender, EventArgs e)
+        {
+            tb_NgaySinh.Text = dtpck_NgaySinh.Value.ToString("dd-MM-yyyy");
+        }
+
+        private void dtpck_NgayBD_ValueChanged(object sender, EventArgs e)
+        {
+            tb_NgayBD.Text = dtpck_NgayBD.Value.ToString("dd-MM-yyyy");
         }
     }
 }

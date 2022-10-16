@@ -269,6 +269,7 @@
             this.dtpck_NgaySinh.Name = "dtpck_NgaySinh";
             this.dtpck_NgaySinh.Size = new System.Drawing.Size(20, 22);
             this.dtpck_NgaySinh.TabIndex = 21;
+            this.dtpck_NgaySinh.ValueChanged += new System.EventHandler(this.dtpck_NgaySinh_ValueChanged);
             // 
             // dtpck_NgayBD
             // 
@@ -276,6 +277,7 @@
             this.dtpck_NgayBD.Name = "dtpck_NgayBD";
             this.dtpck_NgayBD.Size = new System.Drawing.Size(20, 22);
             this.dtpck_NgayBD.TabIndex = 22;
+            this.dtpck_NgayBD.ValueChanged += new System.EventHandler(this.dtpck_NgayBD_ValueChanged);
             // 
             // btn_Luu
             // 
