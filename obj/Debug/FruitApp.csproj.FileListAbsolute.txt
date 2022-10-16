@@ -32,7 +32,6 @@ E:\Code\DoAn\obj\Debug\FruitApp.frm_SignUp.resources
 E:\Code\DoAn\obj\Debug\FruitApp.frm_ManageProduct.resources
 E:\Code\DoAn\obj\Debug\FruitApp.frm_ManageSuplier.resources
 E:\Code\DoAn\obj\Debug\FruitApp.frm_ManageUserAccount.resources
-E:\Code\DoAn\obj\Debug\FruitApp.frm_ManageWareHouse.resources
 E:\Code\DoAn\obj\Debug\FruitApp.Properties.Resources.resources
 E:\Code\DoAn\obj\Debug\FruitApp.csproj.GenerateResource.cache
 E:\Code\DoAn\obj\Debug\FruitApp.csproj.CoreCompileInputs.cache
