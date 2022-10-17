@@ -25,3 +25,30 @@ C:\Users\ASUS\Dropbox\PC\Desktop\FruitApp\1\FruitApp\obj\Debug\FruitApp.frm_Mana
 C:\Users\ASUS\Dropbox\PC\Desktop\FruitApp\1\FruitApp\obj\Debug\FruitApp.frm_ManageProduct.resources
 C:\Users\ASUS\Dropbox\PC\Desktop\FruitApp\1\FruitApp\obj\Debug\FruitApp.frm_ManageSuplier.resources
 C:\Users\ASUS\Dropbox\PC\Desktop\FruitApp\1\FruitApp\obj\Debug\FruitApp.frm_ManageUserAccount.resources
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\bin\Debug\FruitApp.exe.config
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\bin\Debug\FruitApp.exe
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\bin\Debug\FruitApp.pdb
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\bin\Debug\EntityFramework.dll
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\bin\Debug\EntityFramework.xml
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\obj\Debug\FruitApp.csproj.AssemblyReference.cache
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\obj\Debug\FruitApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\obj\Debug\FruitApp.frm_Cart.resources
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\obj\Debug\FruitApp.frm_Statistic.resources
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\obj\Debug\FruitApp.frm_ForgotPassword.resources
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\obj\Debug\FruitApp.frm_SignIn.resources
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\obj\Debug\FruitApp.frm_SignUp.resources
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\obj\Debug\FruitApp.frm_MainPage_Admin.resources
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\obj\Debug\FruitApp.frm_MainPage_User.resources
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\obj\Debug\FruitApp.Forms.Manage.frm_ManageEmployee.resources
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\obj\Debug\FruitApp.frm_ManageOrder.resources
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\obj\Debug\FruitApp.frm_ManageProduct.resources
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\obj\Debug\FruitApp.frm_ManageSuplier.resources
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\obj\Debug\FruitApp.frm_ManageUserAccount.resources
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\obj\Debug\FruitApp.Properties.Resources.resources
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\obj\Debug\FruitApp.csproj.GenerateResource.cache
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\obj\Debug\FruitApp.csproj.CoreCompileInputs.cache
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\obj\Debug\FruitApp.csproj.CopyComplete
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\obj\Debug\FruitApp.exe
+C:\Users\QUOC NHAT\source\repos\Winform_FruitApp\obj\Debug\FruitApp.pdb

@@ -214,6 +214,9 @@
     <Content Include="Assets\Images\TraiCay\TDH001.jpg" />
     <Content Include="Assets\Images\TraiCay\TDH002.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\Images\Login_Register\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

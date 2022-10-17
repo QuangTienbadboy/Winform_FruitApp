@@ -16,5 +16,12 @@ namespace FruitApp
         {
             InitializeComponent();
         }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frm_SignUp frm_SignUp = new frm_SignUp();
+            frm_SignUp.Show();
+            this.Hide();
+        }
     }
 }
