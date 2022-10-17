@@ -48,10 +48,7 @@ namespace FruitApp
                 {
                     throw new Exception("Yêu cầu nhập mật khẩu");
                 }
-                if (Regex.IsMatch(txtLoginEmail.Text, pattern) == false)
-                {
-                    throw new Exception("Yêu cầu nhập đúng định dạng email");
-                }
+                
                 if (txtLoginPassword.TextLength < 8)
                 {
                     throw new Exception("Yêu cầu nhập mật khẩu lớn hơn 6 kí tự");
@@ -76,6 +73,10 @@ namespace FruitApp
 
                 if (cbbQuyen.Text == "Khách hàng")
                 {
+                    if (Regex.IsMatch(txtLoginEmail.Text, pattern) == false)
+                    {
+                        throw new Exception("Yêu cầu nhập đúng định dạng email");
+                    }
                     TaiKhoanKhachHang kh = connectDB.TaiKhoanKhachHangs.FirstOrDefault(p => p.Email == txtLoginEmail.Text);
 
                     if (kh == null)

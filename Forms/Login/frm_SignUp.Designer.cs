@@ -83,11 +83,12 @@
             this.groupBox1.Size = new System.Drawing.Size(681, 620);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(508, 21);
+            this.pictureBox5.Location = new System.Drawing.Point(527, 11);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(148, 115);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -97,9 +98,9 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(6, 455);
+            this.pictureBox4.Location = new System.Drawing.Point(6, 518);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(237, 159);
+            this.pictureBox4.Size = new System.Drawing.Size(228, 96);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 13;
             this.pictureBox4.TabStop = false;
@@ -138,7 +139,7 @@
             this.linkDangNhap.AutoSize = true;
             this.linkDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkDangNhap.LinkColor = System.Drawing.Color.BlueViolet;
-            this.linkDangNhap.Location = new System.Drawing.Point(472, 571);
+            this.linkDangNhap.Location = new System.Drawing.Point(461, 579);
             this.linkDangNhap.Name = "linkDangNhap";
             this.linkDangNhap.Size = new System.Drawing.Size(147, 25);
             this.linkDangNhap.TabIndex = 9;
@@ -151,9 +152,9 @@
             this.btnDangKy.BackColor = System.Drawing.Color.SpringGreen;
             this.btnDangKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangKy.ForeColor = System.Drawing.Color.Red;
-            this.btnDangKy.Location = new System.Drawing.Point(357, 477);
+            this.btnDangKy.Location = new System.Drawing.Point(365, 518);
             this.btnDangKy.Name = "btnDangKy";
-            this.btnDangKy.Size = new System.Drawing.Size(251, 60);
+            this.btnDangKy.Size = new System.Drawing.Size(243, 45);
             this.btnDangKy.TabIndex = 7;
             this.btnDangKy.Text = "Register";
             this.btnDangKy.UseVisualStyleBackColor = false;
