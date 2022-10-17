@@ -75,6 +75,28 @@ namespace FruitApp
                 {
                     to = txtDangKyEmail.Text;
 
+                    int allKH = connectDB.KhachHangs.Count();
+                    KhachHang kh = new KhachHang()
+                    {
+                        MaKhachHang = "KH000" + (allKH + 1).ToString(),
+                        HoTen = txtHoVaTen.Text
+                    };
+                    connectDB.KhachHangs.Add(kh);
+                    connectDB.SaveChanges();
+
+                    int allTK = connectDB.TaiKhoanKhachHangs.Count();
+                    TaiKhoanKhachHang tkkh = new TaiKhoanKhachHang()
+                    {
+                        MaTaiKhoan = "US000" + (allTK + 1).ToString() ,
+                        MaKhachHang = kh.MaKhachHang ,
+                        Email = txtDangKyEmail.Text,
+                        MatKhau = txtDangKyMatKhau.Text,
+                        Admin = false
+                    };
+                    connectDB.TaiKhoanKhachHangs.Add(tkkh);
+                    connectDB.SaveChanges();
+
+
                     frm_SignIn frm_SignIn = new frm_SignIn();
                     frm_SignIn.Show();
                     this.Hide();
@@ -84,17 +106,6 @@ namespace FruitApp
                     throw new Exception("Mã OTP đã nhập không đúng");
                 }
 
-                    int allKH = connectDB.TaiKhoanKhachHangs.Count();
-                    TaiKhoanKhachHang kh = new TaiKhoanKhachHang()
-                    {
-                        MaTaiKhoan = "US0009" ,
-                        MaKhachHang = "KH0009" ,
-                        Email = txtDangKyEmail.Text,
-                        MatKhau = txtDangKyMatKhau.Text,
-                        Admin = false
-                    };
-                    connectDB.TaiKhoanKhachHangs.Add(kh);
-                    connectDB.SaveChanges();
 
 
                 
@@ -128,6 +139,14 @@ namespace FruitApp
 
         private void btnOTPDangKy_Click(object sender, EventArgs e)
         {
+
+            TaiKhoanKhachHang db = connectDB.TaiKhoanKhachHangs.FirstOrDefault(p => p.Email == txtDangKyEmail.Text);
+            if (db != null)
+            {
+                MessageBox.Show("Tài khoản đã có người đăng ký");
+                return;
+            }
+
             String from, pass, messageBody;
             Random rand = new Random();
             randomCode = (rand.Next(999999)).ToString();

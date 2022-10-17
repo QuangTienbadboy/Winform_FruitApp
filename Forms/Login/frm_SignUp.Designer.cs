@@ -48,6 +48,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnOTPDangKy = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.txtHoVaTen = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -55,11 +58,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Khaki;
+            this.groupBox1.Controls.Add(this.pictureBox7);
+            this.groupBox1.Controls.Add(this.txtHoVaTen);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.pictureBox6);
             this.groupBox1.Controls.Add(this.btnOTPDangKy);
             this.groupBox1.Controls.Add(this.label5);
@@ -108,7 +115,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(48, 277);
+            this.pictureBox3.Location = new System.Drawing.Point(48, 296);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(46, 43);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -118,7 +125,7 @@
             // txtDangKyMatKhauLai
             // 
             this.txtDangKyMatKhauLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDangKyMatKhauLai.Location = new System.Drawing.Point(245, 290);
+            this.txtDangKyMatKhauLai.Location = new System.Drawing.Point(245, 309);
             this.txtDangKyMatKhauLai.Name = "txtDangKyMatKhauLai";
             this.txtDangKyMatKhauLai.PasswordChar = '*';
             this.txtDangKyMatKhauLai.Size = new System.Drawing.Size(363, 30);
@@ -128,7 +135,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(128, 293);
+            this.label4.Location = new System.Drawing.Point(128, 312);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 25);
             this.label4.TabIndex = 10;
@@ -163,7 +170,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(48, 209);
+            this.pictureBox2.Location = new System.Drawing.Point(48, 249);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(46, 43);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -183,7 +190,7 @@
             // txtDangKyMatKhau
             // 
             this.txtDangKyMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDangKyMatKhau.Location = new System.Drawing.Point(245, 222);
+            this.txtDangKyMatKhau.Location = new System.Drawing.Point(245, 262);
             this.txtDangKyMatKhau.Name = "txtDangKyMatKhau";
             this.txtDangKyMatKhau.PasswordChar = '*';
             this.txtDangKyMatKhau.Size = new System.Drawing.Size(363, 30);
@@ -195,7 +202,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(128, 225);
+            this.label3.Location = new System.Drawing.Point(128, 265);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 25);
             this.label3.TabIndex = 3;
@@ -233,7 +240,7 @@
             // txtOTPDangKy
             // 
             this.txtOTPDangKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOTPDangKy.Location = new System.Drawing.Point(245, 395);
+            this.txtOTPDangKy.Location = new System.Drawing.Point(245, 414);
             this.txtOTPDangKy.Name = "txtOTPDangKy";
             this.txtOTPDangKy.Size = new System.Drawing.Size(363, 30);
             this.txtOTPDangKy.TabIndex = 15;
@@ -242,7 +249,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(128, 395);
+            this.label5.Location = new System.Drawing.Point(128, 414);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(106, 25);
             this.label5.TabIndex = 16;
@@ -253,7 +260,7 @@
             this.btnOTPDangKy.BackColor = System.Drawing.Color.Violet;
             this.btnOTPDangKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOTPDangKy.ForeColor = System.Drawing.Color.Magenta;
-            this.btnOTPDangKy.Location = new System.Drawing.Point(427, 339);
+            this.btnOTPDangKy.Location = new System.Drawing.Point(427, 357);
             this.btnOTPDangKy.Name = "btnOTPDangKy";
             this.btnOTPDangKy.Size = new System.Drawing.Size(181, 41);
             this.btnOTPDangKy.TabIndex = 17;
@@ -264,12 +271,40 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(36, 351);
+            this.pictureBox6.Location = new System.Drawing.Point(36, 370);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(86, 69);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 18;
             this.pictureBox6.TabStop = false;
+            // 
+            // txtHoVaTen
+            // 
+            this.txtHoVaTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoVaTen.Location = new System.Drawing.Point(245, 208);
+            this.txtHoVaTen.Name = "txtHoVaTen";
+            this.txtHoVaTen.Size = new System.Drawing.Size(363, 30);
+            this.txtHoVaTen.TabIndex = 20;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(128, 211);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(95, 25);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Họ và tên";
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(48, 195);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(46, 43);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 21;
+            this.pictureBox7.TabStop = false;
             // 
             // frm_SignUp
             // 
@@ -287,6 +322,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -312,6 +348,9 @@
         private System.Windows.Forms.Button btnOTPDangKy;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtOTPDangKy;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.TextBox txtHoVaTen;
+        private System.Windows.Forms.Label label6;
     }
 }
 
