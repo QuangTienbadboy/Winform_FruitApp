@@ -164,6 +164,7 @@
             this.txtLoginPassword.PasswordChar = '*';
             this.txtLoginPassword.Size = new System.Drawing.Size(363, 30);
             this.txtLoginPassword.TabIndex = 4;
+            this.txtLoginPassword.TextChanged += new System.EventHandler(this.txtLoginPassword_TextChanged);
             // 
             // label3
             // 

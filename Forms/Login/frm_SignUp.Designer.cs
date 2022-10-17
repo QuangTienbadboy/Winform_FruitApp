@@ -44,9 +44,10 @@
             this.txtDangKyEmail = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.txtOTPDangKy = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.cbbQuyen = new System.Windows.Forms.ComboBox();
+            this.btnOTPDangKy = new System.Windows.Forms.Button();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -59,9 +60,10 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Khaki;
-            this.groupBox1.Controls.Add(this.cbbQuyen);
-            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.pictureBox6);
+            this.groupBox1.Controls.Add(this.btnOTPDangKy);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtOTPDangKy);
             this.groupBox1.Controls.Add(this.pictureBox5);
             this.groupBox1.Controls.Add(this.pictureBox4);
             this.groupBox1.Controls.Add(this.pictureBox3);
@@ -105,7 +107,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(48, 298);
+            this.pictureBox3.Location = new System.Drawing.Point(48, 277);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(46, 43);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -115,7 +117,7 @@
             // txtDangKyMatKhauLai
             // 
             this.txtDangKyMatKhauLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDangKyMatKhauLai.Location = new System.Drawing.Point(245, 311);
+            this.txtDangKyMatKhauLai.Location = new System.Drawing.Point(245, 290);
             this.txtDangKyMatKhauLai.Name = "txtDangKyMatKhauLai";
             this.txtDangKyMatKhauLai.PasswordChar = '*';
             this.txtDangKyMatKhauLai.Size = new System.Drawing.Size(363, 30);
@@ -125,7 +127,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(128, 314);
+            this.label4.Location = new System.Drawing.Point(128, 293);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 25);
             this.label4.TabIndex = 10;
@@ -160,7 +162,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(48, 230);
+            this.pictureBox2.Location = new System.Drawing.Point(48, 209);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(46, 43);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -170,7 +172,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(48, 163);
+            this.pictureBox1.Location = new System.Drawing.Point(48, 142);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(46, 43);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -180,17 +182,19 @@
             // txtDangKyMatKhau
             // 
             this.txtDangKyMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDangKyMatKhau.Location = new System.Drawing.Point(245, 243);
+            this.txtDangKyMatKhau.Location = new System.Drawing.Point(245, 222);
             this.txtDangKyMatKhau.Name = "txtDangKyMatKhau";
             this.txtDangKyMatKhau.PasswordChar = '*';
             this.txtDangKyMatKhau.Size = new System.Drawing.Size(363, 30);
             this.txtDangKyMatKhau.TabIndex = 4;
+            this.txtDangKyMatKhau.TextChanged += new System.EventHandler(this.txtDangKyMatKhau_TextChanged);
+            this.txtDangKyMatKhau.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDangKyMatKhau_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(128, 246);
+            this.label3.Location = new System.Drawing.Point(128, 225);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 25);
             this.label3.TabIndex = 3;
@@ -199,7 +203,7 @@
             // txtDangKyEmail
             // 
             this.txtDangKyEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDangKyEmail.Location = new System.Drawing.Point(245, 163);
+            this.txtDangKyEmail.Location = new System.Drawing.Point(245, 142);
             this.txtDangKyEmail.Name = "txtDangKyEmail";
             this.txtDangKyEmail.Size = new System.Drawing.Size(363, 30);
             this.txtDangKyEmail.TabIndex = 2;
@@ -208,7 +212,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(128, 166);
+            this.label2.Location = new System.Drawing.Point(128, 145);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 25);
             this.label2.TabIndex = 1;
@@ -225,39 +229,46 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Register";
             // 
-            // pictureBox6
+            // txtOTPDangKy
             // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(48, 357);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(173, 79);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 15;
-            this.pictureBox6.TabStop = false;
+            this.txtOTPDangKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOTPDangKy.Location = new System.Drawing.Point(245, 395);
+            this.txtOTPDangKy.Name = "txtOTPDangKy";
+            this.txtOTPDangKy.Size = new System.Drawing.Size(363, 30);
+            this.txtOTPDangKy.TabIndex = 15;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label5.Location = new System.Drawing.Point(240, 376);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(128, 395);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 25);
+            this.label5.Size = new System.Drawing.Size(106, 25);
             this.label5.TabIndex = 16;
-            this.label5.Text = "Chọn quyền";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.label5.Text = "Nhập OTP";
             // 
-            // cbbQuyen
+            // btnOTPDangKy
             // 
-            this.cbbQuyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cbbQuyen.FormattingEnabled = true;
-            this.cbbQuyen.Items.AddRange(new object[] {
-            "Khách hàng",
-            "Admin"});
-            this.cbbQuyen.Location = new System.Drawing.Point(413, 376);
-            this.cbbQuyen.Name = "cbbQuyen";
-            this.cbbQuyen.Size = new System.Drawing.Size(195, 33);
-            this.cbbQuyen.TabIndex = 17;
-            this.cbbQuyen.Text = "Khách hàng";
+            this.btnOTPDangKy.BackColor = System.Drawing.Color.Violet;
+            this.btnOTPDangKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOTPDangKy.ForeColor = System.Drawing.Color.Magenta;
+            this.btnOTPDangKy.Location = new System.Drawing.Point(427, 339);
+            this.btnOTPDangKy.Name = "btnOTPDangKy";
+            this.btnOTPDangKy.Size = new System.Drawing.Size(181, 41);
+            this.btnOTPDangKy.TabIndex = 17;
+            this.btnOTPDangKy.Text = "Gửi OTP";
+            this.btnOTPDangKy.UseVisualStyleBackColor = false;
+            this.btnOTPDangKy.Click += new System.EventHandler(this.btnOTPDangKy_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(36, 351);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(86, 69);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 18;
+            this.pictureBox6.TabStop = false;
             // 
             // frm_SignUp
             // 
@@ -296,9 +307,10 @@
         private System.Windows.Forms.TextBox txtDangKyEmail;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.ComboBox cbbQuyen;
+        private System.Windows.Forms.Button btnOTPDangKy;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtOTPDangKy;
     }
 }
 

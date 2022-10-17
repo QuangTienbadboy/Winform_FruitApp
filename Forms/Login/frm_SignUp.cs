@@ -4,16 +4,24 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FruitApp.Model;
+using System.Net;
+using System.Net.Mail;
 
 namespace FruitApp
 {
     public partial class frm_SignUp : Form
     {
-       
+        String randomCode;
+        public static String to;
+
+        ModelFruitApp connectDB = new ModelFruitApp();
+
         public frm_SignUp()
         {
             InitializeComponent();
@@ -43,14 +51,55 @@ namespace FruitApp
                 {
                     throw new Exception("Yêu cầu nhập đúng định dạng email");
                 }
-                if (txtDangKyMatKhau.TextLength < 6)
+                if (txtDangKyMatKhau.TextLength < 8)
                 {
-                    throw new Exception("Yêu cầu nhập mật khẩu lớn hơn 6 kí tự");
+                    throw new Exception("Yêu cầu nhập mật khẩu lớn hơn8 kí tự");
                 }
+                
                 if (txtDangKyMatKhau.Text != txtDangKyMatKhauLai.Text)
                 {
                     throw new Exception("Yêu cầu nhập mật khẩu lại phải trùng");
                 }
+                if (txtOTPDangKy.Text == "")
+                {
+                    throw new Exception("Yêu cầu nhập mã OTP");
+
+                }
+                TaiKhoanKhachHang db = connectDB.TaiKhoanKhachHangs.FirstOrDefault(p => p.Email == txtDangKyEmail.Text);
+                if (db != null)
+                {
+                    throw new Exception("Tài khoản đã có người đăng ký");
+                }
+
+                if (randomCode == (txtOTPDangKy.Text).ToString())
+                {
+                    to = txtDangKyEmail.Text;
+
+                    frm_SignIn frm_SignIn = new frm_SignIn();
+                    frm_SignIn.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    throw new Exception("Mã OTP đã nhập không đúng");
+                }
+
+                    int allKH = connectDB.TaiKhoanKhachHangs.Count();
+                    TaiKhoanKhachHang kh = new TaiKhoanKhachHang()
+                    {
+                        MaTaiKhoan = "US0009" ,
+                        MaKhachHang = "KH0009" ,
+                        Email = txtDangKyEmail.Text,
+                        MatKhau = txtDangKyMatKhau.Text,
+                        Admin = false
+                    };
+                    connectDB.TaiKhoanKhachHangs.Add(kh);
+                    connectDB.SaveChanges();
+
+
+                
+
+
             }
             catch (Exception ex)
             {
@@ -62,6 +111,50 @@ namespace FruitApp
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtDangKyMatKhau_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDangKyMatKhau_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            //{
+            //    e.Handled = true;
+            //}
+        }
+
+        private void btnOTPDangKy_Click(object sender, EventArgs e)
+        {
+            String from, pass, messageBody;
+            Random rand = new Random();
+            randomCode = (rand.Next(999999)).ToString();
+            MailMessage message = new MailMessage();
+            to = (txtDangKyEmail.Text).ToString();
+            from = "nguyenquocnhat03012002@gmail.com";
+            pass = "eowenkfdoxuvfnsu";
+            messageBody = "Mã kích hoạt tài khoản là: " + randomCode;
+            message.To.Add(to);
+            message.From = new MailAddress(from);
+            message.Body = messageBody;
+            message.Subject = "Create a new account";
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+            smtp.EnableSsl = true;
+            smtp.Port = 587;
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtp.Credentials = new NetworkCredential(from, pass);
+
+            try
+            {
+                smtp.Send(message);
+                MessageBox.Show("Code Send Successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -52,7 +52,7 @@ namespace FruitApp
                 {
                     throw new Exception("Yêu cầu nhập đúng định dạng email");
                 }
-                if (txtLoginPassword.TextLength < 6)
+                if (txtLoginPassword.TextLength < 8)
                 {
                     throw new Exception("Yêu cầu nhập mật khẩu lớn hơn 6 kí tự");
                 }
@@ -99,6 +99,11 @@ namespace FruitApp
 
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void txtLoginPassword_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
