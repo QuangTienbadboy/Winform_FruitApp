@@ -4,15 +4,18 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FruitApp.Model;
 
 namespace FruitApp
 {
     public partial class frm_SignIn : Form
     {
+        ModelFruitApp connectDB = new ModelFruitApp();
         public frm_SignIn()
         {
             InitializeComponent();
@@ -53,6 +56,43 @@ namespace FruitApp
                 {
                     throw new Exception("Yêu cầu nhập mật khẩu lớn hơn 6 kí tự");
                 }
+
+                if (cbbQuyen.Text == "Admin")
+                {
+                    TaiKhoanQuanLy admin = connectDB.TaiKhoanQuanLies.FirstOrDefault(p => p.Username == txtLoginEmail.Text);
+
+                    if (admin == null)
+                    {
+                        throw new Exception("Tài khoản không tồn tại");
+                    }
+                    if (admin.MatKhau.ToString() != txtLoginPassword.Text)
+                    {
+                        throw new Exception("Mật khẩu không hợp lệ");
+                    } else
+                    {
+                        MessageBox.Show("Tài khoản hợp lệ");
+                    }
+                }
+
+                if (cbbQuyen.Text == "Khách hàng")
+                {
+                    TaiKhoanKhachHang kh = connectDB.TaiKhoanKhachHangs.FirstOrDefault(p => p.Email == txtLoginEmail.Text);
+
+                    if (kh == null)
+                    {
+                        throw new Exception("Tài khoản không tồn tại");
+                    }
+                    if (kh.MatKhau.ToString() != txtLoginPassword.Text)
+                    {
+                        throw new Exception("Mật khẩu không hợp lệ");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tài khoản hợp lệ");
+                    }
+                }
+
+
             }
             catch (Exception ex)
             {

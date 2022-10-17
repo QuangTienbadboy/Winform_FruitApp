@@ -45,6 +45,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -128,6 +130,16 @@
     <Compile Include="Forms\Manage\frm_ManageUserAccount.Designer.cs">
       <DependentUpon>frm_ManageUserAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\ChiTietDonHang.cs" />
+    <Compile Include="Model\DoiTac.cs" />
+    <Compile Include="Model\DonHang.cs" />
+    <Compile Include="Model\KhachHang.cs" />
+    <Compile Include="Model\LoaiTraiCay.cs" />
+    <Compile Include="Model\ModelFruitApp.cs" />
+    <Compile Include="Model\NhanVien.cs" />
+    <Compile Include="Model\TaiKhoanKhachHang.cs" />
+    <Compile Include="Model\TaiKhoanQuanLy.cs" />
+    <Compile Include="Model\TraiCay.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\frm_Cart.resx">

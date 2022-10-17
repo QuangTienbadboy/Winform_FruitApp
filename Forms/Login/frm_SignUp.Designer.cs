@@ -44,17 +44,24 @@
             this.txtDangKyEmail = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbbQuyen = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Khaki;
+            this.groupBox1.Controls.Add(this.cbbQuyen);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.pictureBox6);
             this.groupBox1.Controls.Add(this.pictureBox5);
             this.groupBox1.Controls.Add(this.pictureBox4);
             this.groupBox1.Controls.Add(this.pictureBox3);
@@ -88,9 +95,9 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(27, 406);
+            this.pictureBox4.Location = new System.Drawing.Point(6, 455);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(251, 185);
+            this.pictureBox4.Size = new System.Drawing.Size(237, 159);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 13;
             this.pictureBox4.TabStop = false;
@@ -129,7 +136,7 @@
             this.linkDangNhap.AutoSize = true;
             this.linkDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkDangNhap.LinkColor = System.Drawing.Color.BlueViolet;
-            this.linkDangNhap.Location = new System.Drawing.Point(461, 530);
+            this.linkDangNhap.Location = new System.Drawing.Point(472, 571);
             this.linkDangNhap.Name = "linkDangNhap";
             this.linkDangNhap.Size = new System.Drawing.Size(147, 25);
             this.linkDangNhap.TabIndex = 9;
@@ -142,7 +149,7 @@
             this.btnDangKy.BackColor = System.Drawing.Color.SpringGreen;
             this.btnDangKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangKy.ForeColor = System.Drawing.Color.Red;
-            this.btnDangKy.Location = new System.Drawing.Point(357, 421);
+            this.btnDangKy.Location = new System.Drawing.Point(357, 477);
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.Size = new System.Drawing.Size(251, 60);
             this.btnDangKy.TabIndex = 7;
@@ -218,6 +225,40 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Register";
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(48, 357);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(173, 79);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 15;
+            this.pictureBox6.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label5.Location = new System.Drawing.Point(240, 376);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(119, 25);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Chọn quyền";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // cbbQuyen
+            // 
+            this.cbbQuyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cbbQuyen.FormattingEnabled = true;
+            this.cbbQuyen.Items.AddRange(new object[] {
+            "Khách hàng",
+            "Admin"});
+            this.cbbQuyen.Location = new System.Drawing.Point(413, 376);
+            this.cbbQuyen.Name = "cbbQuyen";
+            this.cbbQuyen.Size = new System.Drawing.Size(195, 33);
+            this.cbbQuyen.TabIndex = 17;
+            this.cbbQuyen.Text = "Khách hàng";
+            // 
             // frm_SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -233,6 +274,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -254,6 +296,9 @@
         private System.Windows.Forms.TextBox txtDangKyEmail;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.ComboBox cbbQuyen;
     }
 }
 
