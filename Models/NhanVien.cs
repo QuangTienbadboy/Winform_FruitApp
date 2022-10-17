@@ -27,13 +27,15 @@ namespace FruitApp.Models
         [StringLength(50)]
         public string ChucVu { get; set; }
 
+        [Required]
         [StringLength(100)]
         public string DiaChi { get; set; }
 
+        [Required]
         [StringLength(10)]
         public string DienThoai { get; set; }
 
-        public DateTime? NgaySinh { get; set; }
+        public DateTime NgaySinh { get; set; }
 
         public DateTime NgayBatDauLamViec { get; set; }
 

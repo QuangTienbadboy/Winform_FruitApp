@@ -47,6 +47,8 @@ namespace FruitApp.Models
         [StringLength(512)]
         public string MoTa { get; set; }
 
+        public int SoLuongTonKho { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietDonHang> ChiTietDonHangs { get; set; }
 
