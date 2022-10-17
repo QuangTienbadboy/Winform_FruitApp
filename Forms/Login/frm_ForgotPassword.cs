@@ -64,6 +64,11 @@ namespace FruitApp
                 {
                     khUpdate.MatKhau = txtMatKhauMoi.Text;
                     connectDB.SaveChanges();
+                    MessageBox.Show("Đổi mật khẩu thành công");
+                    this.Hide();
+                    frm_SignIn frm_SignIn = new frm_SignIn();
+                    frm_SignIn.Show();
+
                 }
 
                 }
@@ -143,7 +148,7 @@ namespace FruitApp
                 if (randomCodeQuenMatKhau == (txtOTPQuenMatKhau.Text).ToString())
             {
                 to = txtQuenTaiKhoan.Text;
-
+                    MessageBox.Show("Mã xác nhập thành công");
                     txtMatKhauMoi.Enabled = true;
                     txtNhapLaiMatKhauMoi.Enabled = true;
                     btnQuenMatKhau.Enabled = true;
