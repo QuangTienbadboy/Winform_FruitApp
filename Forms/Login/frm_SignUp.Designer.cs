@@ -1,4 +1,4 @@
-﻿namespace FruitApp
+namespace FruitApp
 {
     partial class frm_SignUp
     {
@@ -353,4 +353,3 @@
         private System.Windows.Forms.Label label6;
     }
 }
-

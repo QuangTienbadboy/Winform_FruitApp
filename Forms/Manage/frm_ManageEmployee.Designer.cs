@@ -31,7 +31,6 @@
             this.pnl_QLNV = new System.Windows.Forms.Panel();
             this.btn_Them = new System.Windows.Forms.Button();
             this.btn_Sua = new System.Windows.Forms.Button();
-            this.btn_Xoa = new System.Windows.Forms.Button();
             this.cb_CVNV = new System.Windows.Forms.ComboBox();
             this.lb_CV = new System.Windows.Forms.Label();
             this.tb_TNV = new System.Windows.Forms.TextBox();
@@ -53,7 +52,7 @@
             this.clm_DT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_ChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_Import = new System.Windows.Forms.Button();
+            this.btn_Xoa = new System.Windows.Forms.Button();
             this.pnl_QLNV.SuspendLayout();
             this.pnl_TTNV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_NV)).BeginInit();
@@ -62,10 +61,10 @@
             // 
             // pnl_QLNV
             // 
-            this.pnl_QLNV.Controls.Add(this.btn_Import);
+            this.pnl_QLNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.pnl_QLNV.Controls.Add(this.btn_Xoa);
             this.pnl_QLNV.Controls.Add(this.btn_Them);
             this.pnl_QLNV.Controls.Add(this.btn_Sua);
-            this.pnl_QLNV.Controls.Add(this.btn_Xoa);
             this.pnl_QLNV.Controls.Add(this.cb_CVNV);
             this.pnl_QLNV.Controls.Add(this.lb_CV);
             this.pnl_QLNV.Controls.Add(this.tb_TNV);
@@ -87,24 +86,18 @@
             this.btn_Them.TabIndex = 8;
             this.btn_Them.Text = "Thêm Nhân Viên";
             this.btn_Them.UseVisualStyleBackColor = true;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // btn_Sua
             // 
+            this.btn_Sua.Enabled = false;
             this.btn_Sua.Location = new System.Drawing.Point(1074, 82);
             this.btn_Sua.Name = "btn_Sua";
             this.btn_Sua.Size = new System.Drawing.Size(164, 37);
             this.btn_Sua.TabIndex = 7;
             this.btn_Sua.Text = "Sửa Thông Tin";
             this.btn_Sua.UseVisualStyleBackColor = true;
-            // 
-            // btn_Xoa
-            // 
-            this.btn_Xoa.Location = new System.Drawing.Point(1263, 82);
-            this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(177, 37);
-            this.btn_Xoa.TabIndex = 6;
-            this.btn_Xoa.Text = "Xóa Nhân Viên";
-            this.btn_Xoa.UseVisualStyleBackColor = true;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
             // cb_CVNV
             // 
@@ -114,6 +107,7 @@
             this.cb_CVNV.Name = "cb_CVNV";
             this.cb_CVNV.Size = new System.Drawing.Size(262, 33);
             this.cb_CVNV.TabIndex = 5;
+            this.cb_CVNV.SelectedIndexChanged += new System.EventHandler(this.cb_CVNV_SelectedIndexChanged);
             // 
             // lb_CV
             // 
@@ -131,6 +125,7 @@
             this.tb_TNV.Name = "tb_TNV";
             this.tb_TNV.Size = new System.Drawing.Size(273, 30);
             this.tb_TNV.TabIndex = 3;
+            this.tb_TNV.TextChanged += new System.EventHandler(this.tb_TNV_TextChanged);
             // 
             // tb_MNV
             // 
@@ -139,6 +134,7 @@
             this.tb_MNV.Name = "tb_MNV";
             this.tb_MNV.Size = new System.Drawing.Size(139, 30);
             this.tb_MNV.TabIndex = 2;
+            this.tb_MNV.TextChanged += new System.EventHandler(this.tb_MNV_TextChanged);
             // 
             // lb_TNV
             // 
@@ -160,6 +156,7 @@
             // 
             // pnl_TTNV
             // 
+            this.pnl_TTNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.pnl_TTNV.Controls.Add(this.lb_NgayVaoLam);
             this.pnl_TTNV.Controls.Add(this.lb_NgaySinh);
             this.pnl_TTNV.Controls.Add(this.lb_DienThoai);
@@ -178,74 +175,81 @@
             // 
             this.lb_NgayVaoLam.AutoSize = true;
             this.lb_NgayVaoLam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_NgayVaoLam.Location = new System.Drawing.Point(299, 639);
+            this.lb_NgayVaoLam.Location = new System.Drawing.Point(299, 602);
             this.lb_NgayVaoLam.Name = "lb_NgayVaoLam";
             this.lb_NgayVaoLam.Size = new System.Drawing.Size(142, 25);
             this.lb_NgayVaoLam.TabIndex = 7;
             this.lb_NgayVaoLam.Text = "Ngày Vào Làm";
+            this.lb_NgayVaoLam.Visible = false;
             // 
             // lb_NgaySinh
             // 
             this.lb_NgaySinh.AutoSize = true;
             this.lb_NgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_NgaySinh.Location = new System.Drawing.Point(58, 639);
+            this.lb_NgaySinh.Location = new System.Drawing.Point(61, 602);
             this.lb_NgaySinh.Name = "lb_NgaySinh";
             this.lb_NgaySinh.Size = new System.Drawing.Size(103, 25);
             this.lb_NgaySinh.TabIndex = 6;
             this.lb_NgaySinh.Text = "Ngày Sinh";
+            this.lb_NgaySinh.Visible = false;
             // 
             // lb_DienThoai
             // 
             this.lb_DienThoai.AutoSize = true;
             this.lb_DienThoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_DienThoai.Location = new System.Drawing.Point(299, 575);
+            this.lb_DienThoai.Location = new System.Drawing.Point(61, 564);
             this.lb_DienThoai.Name = "lb_DienThoai";
             this.lb_DienThoai.Size = new System.Drawing.Size(107, 25);
             this.lb_DienThoai.TabIndex = 5;
             this.lb_DienThoai.Text = "Điện Thoại";
             this.lb_DienThoai.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lb_DienThoai.Visible = false;
             // 
             // lb_DiaChi
             // 
             this.lb_DiaChi.AutoSize = true;
             this.lb_DiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_DiaChi.Location = new System.Drawing.Point(58, 575);
+            this.lb_DiaChi.Location = new System.Drawing.Point(61, 523);
             this.lb_DiaChi.Name = "lb_DiaChi";
             this.lb_DiaChi.Size = new System.Drawing.Size(76, 25);
             this.lb_DiaChi.TabIndex = 4;
             this.lb_DiaChi.Text = "Địa Chỉ";
+            this.lb_DiaChi.Visible = false;
             // 
             // lb_ChucVu
             // 
             this.lb_ChucVu.AutoSize = true;
             this.lb_ChucVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_ChucVu.Location = new System.Drawing.Point(299, 509);
+            this.lb_ChucVu.Location = new System.Drawing.Point(299, 483);
             this.lb_ChucVu.Name = "lb_ChucVu";
             this.lb_ChucVu.Size = new System.Drawing.Size(89, 25);
             this.lb_ChucVu.TabIndex = 3;
             this.lb_ChucVu.Text = "Chức Vụ";
             this.lb_ChucVu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lb_ChucVu.Visible = false;
             // 
             // lb_MaNV
             // 
             this.lb_MaNV.AutoSize = true;
             this.lb_MaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_MaNV.Location = new System.Drawing.Point(58, 509);
+            this.lb_MaNV.Location = new System.Drawing.Point(61, 483);
             this.lb_MaNV.Name = "lb_MaNV";
             this.lb_MaNV.Size = new System.Drawing.Size(73, 25);
             this.lb_MaNV.TabIndex = 2;
             this.lb_MaNV.Text = "Mã NV";
+            this.lb_MaNV.Visible = false;
             // 
             // lb_TenNV
             // 
             this.lb_TenNV.AutoSize = true;
             this.lb_TenNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_TenNV.ForeColor = System.Drawing.Color.Blue;
-            this.lb_TenNV.Location = new System.Drawing.Point(243, 445);
+            this.lb_TenNV.Location = new System.Drawing.Point(168, 436);
             this.lb_TenNV.Name = "lb_TenNV";
             this.lb_TenNV.Size = new System.Drawing.Size(90, 31);
             this.lb_TenNV.TabIndex = 1;
             this.lb_TenNV.Text = "Name";
+            this.lb_TenNV.Visible = false;
             // 
             // ptr_NV
             // 
@@ -255,6 +259,7 @@
             this.ptr_NV.Size = new System.Drawing.Size(448, 417);
             this.ptr_NV.TabIndex = 0;
             this.ptr_NV.TabStop = false;
+            this.ptr_NV.Visible = false;
             // 
             // dgv_NV
             // 
@@ -274,6 +279,7 @@
             this.dgv_NV.Size = new System.Drawing.Size(1248, 880);
             this.dgv_NV.TabIndex = 2;
             this.dgv_NV.TabStop = false;
+            this.dgv_NV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_NV_CellContentClick);
             // 
             // clm_MaNV
             // 
@@ -320,19 +326,22 @@
             this.clm_GhiChu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.clm_GhiChu.Width = 360;
             // 
-            // btn_Import
+            // btn_Xoa
             // 
-            this.btn_Import.Location = new System.Drawing.Point(1465, 80);
-            this.btn_Import.Name = "btn_Import";
-            this.btn_Import.Size = new System.Drawing.Size(100, 37);
-            this.btn_Import.TabIndex = 9;
-            this.btn_Import.Text = "Import";
-            this.btn_Import.UseVisualStyleBackColor = true;
+            this.btn_Xoa.Enabled = false;
+            this.btn_Xoa.Location = new System.Drawing.Point(1258, 80);
+            this.btn_Xoa.Name = "btn_Xoa";
+            this.btn_Xoa.Size = new System.Drawing.Size(164, 37);
+            this.btn_Xoa.TabIndex = 9;
+            this.btn_Xoa.Text = "Xóa Thông Tin";
+            this.btn_Xoa.UseVisualStyleBackColor = true;
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
             // frm_ManageEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.dgv_NV);
             this.Controls.Add(this.pnl_TTNV);
@@ -340,6 +349,7 @@
             this.Name = "frm_ManageEmployee";
             this.Text = "Quản Lý Nhân Viên";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm_ManageEmployee_FormClosed);
+            this.Load += new System.EventHandler(this.frm_ManageEmployee_Load);
             this.pnl_QLNV.ResumeLayout(false);
             this.pnl_QLNV.PerformLayout();
             this.pnl_TTNV.ResumeLayout(false);
@@ -371,12 +381,11 @@
         private System.Windows.Forms.ComboBox cb_CVNV;
         private System.Windows.Forms.Button btn_Them;
         private System.Windows.Forms.Button btn_Sua;
-        private System.Windows.Forms.Button btn_Xoa;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_MaNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_TenNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_DT;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_ChucVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_GhiChu;
-        private System.Windows.Forms.Button btn_Import;
+        private System.Windows.Forms.Button btn_Xoa;
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace FruitApp
+namespace FruitApp
 {
     partial class frm_ForgotPassword
     {

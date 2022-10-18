@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.dgv_DoiTac = new System.Windows.Forms.DataGridView();
-            this.pnl_DoiTac = new System.Windows.Forms.Panel();
             this.clm_MaDoiTac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_TenDoiTac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_Them = new System.Windows.Forms.Button();
+            this.pnl_DoiTac = new System.Windows.Forms.Panel();
             this.btn_Sua = new System.Windows.Forms.Button();
+            this.btn_Them = new System.Windows.Forms.Button();
             this.lb_MaDoiTac = new System.Windows.Forms.Label();
             this.lb_TenDoiTac = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,7 +43,7 @@
             this.tb_MaDoiTac = new System.Windows.Forms.TextBox();
             this.tb_Fax = new System.Windows.Forms.TextBox();
             this.tb_DiaChi = new System.Windows.Forms.TextBox();
-            this.TenDoiTac = new System.Windows.Forms.TextBox();
+            this.tb_TenDoiTac = new System.Windows.Forms.TextBox();
             this.tb_DienThoai = new System.Windows.Forms.TextBox();
             this.tb_MaSoThue = new System.Windows.Forms.TextBox();
             this.tb_NgayHopTac = new System.Windows.Forms.TextBox();
@@ -52,6 +52,7 @@
             this.rtbx_MoTa = new System.Windows.Forms.RichTextBox();
             this.btn_Luu = new System.Windows.Forms.Button();
             this.btn_Huy = new System.Windows.Forms.Button();
+            this.dtpck_ChonNgay = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DoiTac)).BeginInit();
             this.pnl_DoiTac.SuspendLayout();
             this.SuspendLayout();
@@ -70,15 +71,7 @@
             this.dgv_DoiTac.Size = new System.Drawing.Size(760, 650);
             this.dgv_DoiTac.TabIndex = 0;
             this.dgv_DoiTac.TabStop = false;
-            // 
-            // pnl_DoiTac
-            // 
-            this.pnl_DoiTac.Controls.Add(this.btn_Sua);
-            this.pnl_DoiTac.Controls.Add(this.btn_Them);
-            this.pnl_DoiTac.Location = new System.Drawing.Point(0, 0);
-            this.pnl_DoiTac.Name = "pnl_DoiTac";
-            this.pnl_DoiTac.Size = new System.Drawing.Size(760, 213);
-            this.pnl_DoiTac.TabIndex = 1;
+            this.dgv_DoiTac.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DoiTac_CellClick);
             // 
             // clm_MaDoiTac
             // 
@@ -96,15 +89,15 @@
             this.clm_TenDoiTac.ReadOnly = true;
             this.clm_TenDoiTac.Width = 350;
             // 
-            // btn_Them
+            // pnl_DoiTac
             // 
-            this.btn_Them.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Them.Location = new System.Drawing.Point(175, 75);
-            this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(167, 38);
-            this.btn_Them.TabIndex = 0;
-            this.btn_Them.Text = "Thêm Đối Tác";
-            this.btn_Them.UseVisualStyleBackColor = true;
+            this.pnl_DoiTac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.pnl_DoiTac.Controls.Add(this.btn_Sua);
+            this.pnl_DoiTac.Controls.Add(this.btn_Them);
+            this.pnl_DoiTac.Location = new System.Drawing.Point(0, 0);
+            this.pnl_DoiTac.Name = "pnl_DoiTac";
+            this.pnl_DoiTac.Size = new System.Drawing.Size(760, 213);
+            this.pnl_DoiTac.TabIndex = 1;
             // 
             // btn_Sua
             // 
@@ -115,6 +108,18 @@
             this.btn_Sua.TabIndex = 1;
             this.btn_Sua.Text = "Sửa Thông Tin";
             this.btn_Sua.UseVisualStyleBackColor = true;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
+            // 
+            // btn_Them
+            // 
+            this.btn_Them.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Them.Location = new System.Drawing.Point(175, 75);
+            this.btn_Them.Name = "btn_Them";
+            this.btn_Them.Size = new System.Drawing.Size(167, 38);
+            this.btn_Them.TabIndex = 0;
+            this.btn_Them.Text = "Thêm Đối Tác";
+            this.btn_Them.UseVisualStyleBackColor = true;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // lb_MaDoiTac
             // 
@@ -155,7 +160,6 @@
             this.label4.Size = new System.Drawing.Size(76, 25);
             this.label4.TabIndex = 5;
             this.label4.Text = "Địa Chỉ";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -182,6 +186,7 @@
             this.tb_MaDoiTac.Enabled = false;
             this.tb_MaDoiTac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_MaDoiTac.Location = new System.Drawing.Point(879, 150);
+            this.tb_MaDoiTac.MaxLength = 6;
             this.tb_MaDoiTac.Name = "tb_MaDoiTac";
             this.tb_MaDoiTac.Size = new System.Drawing.Size(167, 30);
             this.tb_MaDoiTac.TabIndex = 8;
@@ -191,6 +196,7 @@
             this.tb_Fax.Enabled = false;
             this.tb_Fax.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Fax.Location = new System.Drawing.Point(879, 399);
+            this.tb_Fax.MaxLength = 15;
             this.tb_Fax.Name = "tb_Fax";
             this.tb_Fax.Size = new System.Drawing.Size(199, 30);
             this.tb_Fax.TabIndex = 14;
@@ -200,24 +206,27 @@
             this.tb_DiaChi.Enabled = false;
             this.tb_DiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_DiaChi.Location = new System.Drawing.Point(879, 277);
+            this.tb_DiaChi.MaxLength = 100;
             this.tb_DiaChi.Name = "tb_DiaChi";
             this.tb_DiaChi.Size = new System.Drawing.Size(318, 30);
             this.tb_DiaChi.TabIndex = 15;
             // 
-            // TenDoiTac
+            // tb_TenDoiTac
             // 
-            this.TenDoiTac.Enabled = false;
-            this.TenDoiTac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TenDoiTac.Location = new System.Drawing.Point(1126, 150);
-            this.TenDoiTac.Name = "TenDoiTac";
-            this.TenDoiTac.Size = new System.Drawing.Size(329, 30);
-            this.TenDoiTac.TabIndex = 16;
+            this.tb_TenDoiTac.Enabled = false;
+            this.tb_TenDoiTac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_TenDoiTac.Location = new System.Drawing.Point(1126, 150);
+            this.tb_TenDoiTac.MaxLength = 50;
+            this.tb_TenDoiTac.Name = "tb_TenDoiTac";
+            this.tb_TenDoiTac.Size = new System.Drawing.Size(329, 30);
+            this.tb_TenDoiTac.TabIndex = 16;
             // 
             // tb_DienThoai
             // 
             this.tb_DienThoai.Enabled = false;
             this.tb_DienThoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_DienThoai.Location = new System.Drawing.Point(1270, 277);
+            this.tb_DienThoai.MaxLength = 10;
             this.tb_DienThoai.Name = "tb_DienThoai";
             this.tb_DienThoai.Size = new System.Drawing.Size(185, 30);
             this.tb_DienThoai.TabIndex = 17;
@@ -227,6 +236,7 @@
             this.tb_MaSoThue.Enabled = false;
             this.tb_MaSoThue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_MaSoThue.Location = new System.Drawing.Point(1126, 399);
+            this.tb_MaSoThue.MaxLength = 15;
             this.tb_MaSoThue.Name = "tb_MaSoThue";
             this.tb_MaSoThue.Size = new System.Drawing.Size(199, 30);
             this.tb_MaSoThue.TabIndex = 18;
@@ -236,6 +246,7 @@
             this.tb_NgayHopTac.Enabled = false;
             this.tb_NgayHopTac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_NgayHopTac.Location = new System.Drawing.Point(879, 501);
+            this.tb_NgayHopTac.MaxLength = 10;
             this.tb_NgayHopTac.Name = "tb_NgayHopTac";
             this.tb_NgayHopTac.Size = new System.Drawing.Size(199, 30);
             this.tb_NgayHopTac.TabIndex = 20;
@@ -265,6 +276,7 @@
             this.rtbx_MoTa.Enabled = false;
             this.rtbx_MoTa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbx_MoTa.Location = new System.Drawing.Point(882, 613);
+            this.rtbx_MoTa.MaxLength = 256;
             this.rtbx_MoTa.Name = "rtbx_MoTa";
             this.rtbx_MoTa.Size = new System.Drawing.Size(573, 252);
             this.rtbx_MoTa.TabIndex = 22;
@@ -281,6 +293,7 @@
             this.btn_Luu.Text = "Lưu";
             this.btn_Luu.UseVisualStyleBackColor = false;
             this.btn_Luu.Visible = false;
+            this.btn_Luu.Click += new System.EventHandler(this.btn_Luu_Click);
             // 
             // btn_Huy
             // 
@@ -293,12 +306,24 @@
             this.btn_Huy.Text = "Hủy Bỏ";
             this.btn_Huy.UseVisualStyleBackColor = false;
             this.btn_Huy.Visible = false;
+            this.btn_Huy.Click += new System.EventHandler(this.btn_Huy_Click);
+            // 
+            // dtpck_ChonNgay
+            // 
+            this.dtpck_ChonNgay.Location = new System.Drawing.Point(1059, 505);
+            this.dtpck_ChonNgay.Name = "dtpck_ChonNgay";
+            this.dtpck_ChonNgay.Size = new System.Drawing.Size(17, 22);
+            this.dtpck_ChonNgay.TabIndex = 25;
+            this.dtpck_ChonNgay.Visible = false;
+            this.dtpck_ChonNgay.ValueChanged += new System.EventHandler(this.dtpck_ChonNgay_ValueChanged);
             // 
             // frm_ManageSuplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.dtpck_ChonNgay);
             this.Controls.Add(this.btn_Huy);
             this.Controls.Add(this.btn_Luu);
             this.Controls.Add(this.rtbx_MoTa);
@@ -307,7 +332,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tb_MaSoThue);
             this.Controls.Add(this.tb_DienThoai);
-            this.Controls.Add(this.TenDoiTac);
+            this.Controls.Add(this.tb_TenDoiTac);
             this.Controls.Add(this.tb_DiaChi);
             this.Controls.Add(this.tb_Fax);
             this.Controls.Add(this.tb_MaDoiTac);
@@ -323,6 +348,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Quản Lý Đối Tác";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm_ManageSuplier_FormClosed);
+            this.Load += new System.EventHandler(this.frm_ManageSuplier_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DoiTac)).EndInit();
             this.pnl_DoiTac.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -347,7 +373,7 @@
         private System.Windows.Forms.TextBox tb_MaDoiTac;
         private System.Windows.Forms.TextBox tb_Fax;
         private System.Windows.Forms.TextBox tb_DiaChi;
-        private System.Windows.Forms.TextBox TenDoiTac;
+        private System.Windows.Forms.TextBox tb_TenDoiTac;
         private System.Windows.Forms.TextBox tb_DienThoai;
         private System.Windows.Forms.TextBox tb_MaSoThue;
         private System.Windows.Forms.TextBox tb_NgayHopTac;
@@ -356,5 +382,6 @@
         private System.Windows.Forms.RichTextBox rtbx_MoTa;
         private System.Windows.Forms.Button btn_Luu;
         private System.Windows.Forms.Button btn_Huy;
+        private System.Windows.Forms.DateTimePicker dtpck_ChonNgay;
     }
 }
