@@ -67,7 +67,10 @@ namespace FruitApp
                         throw new Exception("Mật khẩu không hợp lệ");
                     } else
                     {
-                        MessageBox.Show("Tài khoản hợp lệ");
+                        frm_MainPage_Admin f = new frm_MainPage_Admin();
+                        f.Owner = this;
+                        f.Show();
+                        this.Hide();
                     }
                 }
 
@@ -89,7 +92,10 @@ namespace FruitApp
                     }
                     else
                     {
-                        MessageBox.Show("Tài khoản hợp lệ");
+                        frm_MainPage_User f = new frm_MainPage_User();
+                        f.Owner = this;
+                        f.Show();
+                        this.Hide();
                     }
                 }
 
