@@ -41,13 +41,20 @@ namespace FruitApp.Forms.Manage
 
         private void btn_Browse_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "png file (*.png)|*.png|jpg file (*.jpg)|*.jpg" })
+            try
             {
-                if (ofd.ShowDialog() == DialogResult.OK)
+                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "png file (*.png)|*.png|jpg file (*.jpg)|*.jpg" })
                 {
-                    ptr_TraiCay.Image = Image.FromFile(ofd.FileName);
-                    image = ofd.FileName;
+                    if (ofd.ShowDialog() == DialogResult.OK)
+                    {
+                        ptr_TraiCay.Image = Image.FromFile(ofd.FileName);
+                        image = ofd.FileName;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông Báo");
             }
         }
 
@@ -104,6 +111,7 @@ namespace FruitApp.Forms.Manage
                         {
                             s = s + "\nGiá bán";
                             flag = true;
+                            break;
                         }
                     }
                     foreach (var c in tb_GiaMua.Text)
@@ -112,6 +120,7 @@ namespace FruitApp.Forms.Manage
                         {
                             s = s + "\nGiá mua";
                             flag = true;
+                            break;
                         }
                     }
                     if(flag == true)
@@ -221,40 +230,47 @@ namespace FruitApp.Forms.Manage
 
         private void cb_LoaiTraiCay_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FruitAppContext ctx = new FruitAppContext();
-            if(cb_LoaiTraiCay.Text == "Dưa")
+            try
             {
-                rbtn_DuaHau.Visible = true;
-                rbtn_DuaLuoi.Visible = true;
-                if(rbtn_DuaHau.Checked == true)
+                FruitAppContext ctx = new FruitAppContext();
+                if (cb_LoaiTraiCay.Text == "Dưa")
                 {
-                    tb_MaTC.Text = newMaTC(ctx.TraiCays.Where(p=>p.MaTraiCay.Contains("TDH")).ToList().Max(p=>p.MaTraiCay));
+                    rbtn_DuaHau.Visible = true;
+                    rbtn_DuaLuoi.Visible = true;
+                    if (rbtn_DuaHau.Checked == true)
+                    {
+                        tb_MaTC.Text = newMaTC(ctx.TraiCays.Where(p => p.MaTraiCay.Contains("TDH")).ToList().Max(p => p.MaTraiCay));
+                    }
+                    else
+                    {
+                        tb_MaTC.Text = newMaTC(ctx.TraiCays.Where(p => p.MaTraiCay.Contains("DL")).ToList().Max(p => p.MaTraiCay));
+                    }
                 }
                 else
                 {
-                    tb_MaTC.Text = newMaTC(ctx.TraiCays.Where(p => p.MaTraiCay.Contains("DL")).ToList().Max(p => p.MaTraiCay));
+                    rbtn_DuaHau.Visible = false;
+                    rbtn_DuaLuoi.Visible = false;
+                    if (cb_LoaiTraiCay.Text == "Táo")
+                    {
+                        tb_MaTC.Text = newMaTC(ctx.TraiCays.Where(p => p.MaTraiCay.Contains("TA")).ToList().Max(p => p.MaTraiCay));
+                    }
+                    if (cb_LoaiTraiCay.Text == "Cam")
+                    {
+                        tb_MaTC.Text = newMaTC(ctx.TraiCays.Where(p => p.MaTraiCay.Contains("CA")).ToList().Max(p => p.MaTraiCay));
+                    }
+                    if (cb_LoaiTraiCay.Text == "Chuối")
+                    {
+                        tb_MaTC.Text = newMaTC(ctx.TraiCays.Where(p => p.MaTraiCay.Contains("CH")).ToList().Max(p => p.MaTraiCay));
+                    }
+                    if (cb_LoaiTraiCay.Text == "Nho")
+                    {
+                        tb_MaTC.Text = newMaTC(ctx.TraiCays.Where(p => p.MaTraiCay.Contains("NH")).ToList().Max(p => p.MaTraiCay));
+                    }
                 }
             }
-            else
+            catch(Exception ex)
             {
-                rbtn_DuaHau.Visible = false;
-                rbtn_DuaLuoi.Visible = false;
-                if(cb_LoaiTraiCay.Text == "Táo")
-                {
-                    tb_MaTC.Text = newMaTC(ctx.TraiCays.Where(p => p.MaTraiCay.Contains("TA")).ToList().Max(p => p.MaTraiCay));
-                }
-                if (cb_LoaiTraiCay.Text == "Cam")
-                {
-                    tb_MaTC.Text = newMaTC(ctx.TraiCays.Where(p => p.MaTraiCay.Contains("CA")).ToList().Max(p => p.MaTraiCay));
-                }
-                if (cb_LoaiTraiCay.Text == "Chuối")
-                {
-                    tb_MaTC.Text = newMaTC(ctx.TraiCays.Where(p => p.MaTraiCay.Contains("CH")).ToList().Max(p => p.MaTraiCay));
-                }
-                if (cb_LoaiTraiCay.Text == "Nho")
-                {
-                    tb_MaTC.Text = newMaTC(ctx.TraiCays.Where(p => p.MaTraiCay.Contains("NH")).ToList().Max(p => p.MaTraiCay));
-                }
+                MessageBox.Show(ex.Message, "Thông Báo");
             }
         }
     }

@@ -48,44 +48,51 @@ namespace FruitApp
 
         private void dgv_DoiTac_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            FruitAppContext ctx = new FruitAppContext();
-            if (e.RowIndex != -1 && e.RowIndex != dgv_DoiTac.RowCount - 1)
+            try
             {
-                DoiTac dt = ctx.DoiTacs.ToList().FirstOrDefault(p => p.MaDoiTac == dgv_DoiTac.Rows[e.RowIndex].Cells[0].Value.ToString());
-                tb_MaDoiTac.Text = dt.MaDoiTac;
-                SelectedMaDT = dt.MaDoiTac;
-                tb_DiaChi.Text = dt.DiaChiDoiTac;
-                tb_DienThoai.Text = dt.DienThoai;
-                tb_NgayHopTac.Text = dt.NgayHopTac.ToShortDateString();
-                tb_TenDoiTac.Text = dt.TenDoiTac;
-                if (dt.Fax != null)
+                FruitAppContext ctx = new FruitAppContext();
+                if (e.RowIndex != -1 && e.RowIndex != dgv_DoiTac.RowCount - 1)
                 {
-                    tb_Fax.Text = dt.Fax;
+                    DoiTac dt = ctx.DoiTacs.ToList().FirstOrDefault(p => p.MaDoiTac == dgv_DoiTac.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    tb_MaDoiTac.Text = dt.MaDoiTac;
+                    SelectedMaDT = dt.MaDoiTac;
+                    tb_DiaChi.Text = dt.DiaChiDoiTac;
+                    tb_DienThoai.Text = dt.DienThoai;
+                    tb_NgayHopTac.Text = dt.NgayHopTac.ToShortDateString();
+                    tb_TenDoiTac.Text = dt.TenDoiTac;
+                    if (dt.Fax != null)
+                    {
+                        tb_Fax.Text = dt.Fax;
+                    }
+                    else
+                    {
+                        tb_Fax.Text = "";
+                    }
+                    if (dt.MaSoThue != null)
+                    {
+                        tb_MaSoThue.Text = dt.MaSoThue;
+                    }
+                    else
+                    {
+                        tb_MaSoThue.Text = "";
+                    }
+                    if (dt.MoTa != null)
+                    {
+                        rtbx_MoTa.Text = dt.MoTa;
+                    }
+                    else
+                    {
+                        rtbx_MoTa.Text = "";
+                    }
+                    btn_Sua.Enabled = true;
                 }
                 else
-                {
-                    tb_Fax.Text = "";
-                }
-                if (dt.MaSoThue != null)
-                {
-                    tb_MaSoThue.Text = dt.MaSoThue;
-                }
-                else
-                {
-                    tb_MaSoThue.Text = "";
-                }
-                if (dt.MoTa != null)
-                {
-                    rtbx_MoTa.Text = dt.MoTa;
-                }
-                else
-                {
-                    rtbx_MoTa.Text = "";
-                }
-                btn_Sua.Enabled = true;
+                    btn_Sua.Enabled = false;
             }
-            else
-                btn_Sua.Enabled = false;
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông Báo");
+            }
         }
 
         private void An()
@@ -212,10 +219,13 @@ namespace FruitApp
                         dt.TenDoiTac = tb_TenDoiTac.Text;
                         dt.DiaChiDoiTac = tb_DiaChi.Text;
                         dt.DienThoai = tb_DienThoai.Text;
-                        dt.Fax = tb_Fax.Text;
-                        dt.MaSoThue = tb_MaSoThue.Text;
+                        if(tb_Fax.Text != "")
+                            dt.Fax = tb_Fax.Text;
+                        if(tb_MaSoThue.Text != "")
+                            dt.MaSoThue = tb_MaSoThue.Text;
                         dt.NgayHopTac = dtpck_ChonNgay.Value;
-                        dt.MoTa = rtbx_MoTa.Text;
+                        if(rtbx_MoTa.Text != "")
+                            dt.MoTa = rtbx_MoTa.Text;
                         ctx.SaveChanges();
                         MessageBox.Show("Thay đổi thông tin đối tác thành công", "Thông Báo");
                     }

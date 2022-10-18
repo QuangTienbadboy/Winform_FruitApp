@@ -38,7 +38,7 @@ namespace FruitApp.Forms.Manage
         }
 
         internal int ans = 0;
-        internal string image = "";
+        internal string image = null;
 
         private void btn_Luu_Click(object sender, EventArgs e)
         {
@@ -63,7 +63,7 @@ namespace FruitApp.Forms.Manage
                 }
                 if (tb_DienThoai.Text == "")
                 {
-                    s = s + "\nTên nhân viên";
+                    s = s + "\nĐiện thoại";
                     flag = true;
                 }
                 if (tb_NgayBD.Text == "")
@@ -75,8 +75,25 @@ namespace FruitApp.Forms.Manage
                     throw new Exception(s);
                 else
                 {
-                    ans = 1;
-                    this.Close();
+                    flag = false;
+                    if(tb_DienThoai.Text.Length != 10)
+                        flag = true;
+                    foreach (char c in tb_DienThoai.Text)
+                    {
+                        if(c < 48 || c > 57)
+                        {
+                            flag = true;
+                        }
+                    }
+                    if(flag == true)
+                    {
+                        throw new Exception("Điện thoại không hợp lệ");
+                    }
+                    else
+                    {
+                        ans = 1;
+                        this.Close();
+                    }
                 }
             }
             catch(Exception ex)
@@ -93,13 +110,20 @@ namespace FruitApp.Forms.Manage
 
         private void btn_Browse_Click(object sender, EventArgs e)
         {
-            using(OpenFileDialog ofd = new OpenFileDialog() { Filter = "png file (*.png)|*.png|jpg file (*.jpg)|*.jpg" })
+            try
             {
-                if(ofd.ShowDialog() == DialogResult.OK)
+                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "png file (*.png)|*.png|jpg file (*.jpg)|*.jpg" })
                 {
-                    ptr_NV.Image = Image.FromFile(ofd.FileName);
-                    image = ofd.FileName;
+                    if (ofd.ShowDialog() == DialogResult.OK)
+                    {
+                        ptr_NV.Image = Image.FromFile(ofd.FileName);
+                        image = ofd.FileName;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông Báo");
             }
         }
 

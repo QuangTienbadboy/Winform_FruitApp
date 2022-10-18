@@ -45,21 +45,24 @@
             this.lb_ChucVu = new System.Windows.Forms.Label();
             this.lb_MaNV = new System.Windows.Forms.Label();
             this.lb_TenNV = new System.Windows.Forms.Label();
+            this.ptr_NV = new System.Windows.Forms.PictureBox();
             this.dgv_NV = new System.Windows.Forms.DataGridView();
             this.clm_MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_DT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_ChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ptr_NV = new System.Windows.Forms.PictureBox();
+            this.btn_Xoa = new System.Windows.Forms.Button();
             this.pnl_QLNV.SuspendLayout();
             this.pnl_TTNV.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_NV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_NV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_NV)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_QLNV
             // 
+            this.pnl_QLNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.pnl_QLNV.Controls.Add(this.btn_Xoa);
             this.pnl_QLNV.Controls.Add(this.btn_Them);
             this.pnl_QLNV.Controls.Add(this.btn_Sua);
             this.pnl_QLNV.Controls.Add(this.cb_CVNV);
@@ -153,6 +156,7 @@
             // 
             // pnl_TTNV
             // 
+            this.pnl_TTNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.pnl_TTNV.Controls.Add(this.lb_NgayVaoLam);
             this.pnl_TTNV.Controls.Add(this.lb_NgaySinh);
             this.pnl_TTNV.Controls.Add(this.lb_DienThoai);
@@ -247,6 +251,16 @@
             this.lb_TenNV.Text = "Name";
             this.lb_TenNV.Visible = false;
             // 
+            // ptr_NV
+            // 
+            this.ptr_NV.BackColor = System.Drawing.Color.White;
+            this.ptr_NV.Location = new System.Drawing.Point(63, 16);
+            this.ptr_NV.Name = "ptr_NV";
+            this.ptr_NV.Size = new System.Drawing.Size(448, 417);
+            this.ptr_NV.TabIndex = 0;
+            this.ptr_NV.TabStop = false;
+            this.ptr_NV.Visible = false;
+            // 
             // dgv_NV
             // 
             this.dgv_NV.BackgroundColor = System.Drawing.Color.White;
@@ -312,20 +326,22 @@
             this.clm_GhiChu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.clm_GhiChu.Width = 360;
             // 
-            // ptr_NV
+            // btn_Xoa
             // 
-            this.ptr_NV.BackColor = System.Drawing.Color.White;
-            this.ptr_NV.Location = new System.Drawing.Point(63, 16);
-            this.ptr_NV.Name = "ptr_NV";
-            this.ptr_NV.Size = new System.Drawing.Size(448, 417);
-            this.ptr_NV.TabIndex = 0;
-            this.ptr_NV.TabStop = false;
-            this.ptr_NV.Visible = false;
+            this.btn_Xoa.Enabled = false;
+            this.btn_Xoa.Location = new System.Drawing.Point(1258, 80);
+            this.btn_Xoa.Name = "btn_Xoa";
+            this.btn_Xoa.Size = new System.Drawing.Size(164, 37);
+            this.btn_Xoa.TabIndex = 9;
+            this.btn_Xoa.Text = "Xóa Thông Tin";
+            this.btn_Xoa.UseVisualStyleBackColor = true;
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
             // frm_ManageEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.dgv_NV);
             this.Controls.Add(this.pnl_TTNV);
@@ -338,8 +354,8 @@
             this.pnl_QLNV.PerformLayout();
             this.pnl_TTNV.ResumeLayout(false);
             this.pnl_TTNV.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_NV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_NV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_NV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -370,5 +386,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_DT;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_ChucVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_GhiChu;
+        private System.Windows.Forms.Button btn_Xoa;
     }
 }

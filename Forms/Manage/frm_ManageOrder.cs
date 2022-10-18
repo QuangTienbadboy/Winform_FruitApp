@@ -21,68 +21,75 @@ namespace FruitApp
 
         private void loadDataGridView(string MaDH, string NgayDatHang)
         {
-            dgv_Order.Rows.Clear();
-            FruitAppContext ctx = new FruitAppContext();
-            List<DonHang> ldh = new List<DonHang>();
-            if(cbx_ChuaXacNhan.Checked == false && cbx_DaXacNhan.Checked == false 
-                && cbx_DangGiaoHang.Checked == false && cbx_HoanThanh.Checked == false
-                && cbx_DaHuy.Checked == false)
+            try
             {
-                ldh = ctx.DonHangs.ToList();
-            }
-            else
-            {
-                if(cbx_ChuaXacNhan.Checked == true)
+                dgv_Order.Rows.Clear();
+                FruitAppContext ctx = new FruitAppContext();
+                List<DonHang> ldh = new List<DonHang>();
+                if (cbx_ChuaXacNhan.Checked == false && cbx_DaXacNhan.Checked == false
+                    && cbx_DangGiaoHang.Checked == false && cbx_HoanThanh.Checked == false
+                    && cbx_DaHuy.Checked == false)
                 {
-                    List<DonHang> tam = ctx.DonHangs.Where(p => p.TrangThai == "Chưa Xác Nhận").ToList();
-                    ldh = ldh.Union(tam).ToList();
+                    ldh = ctx.DonHangs.ToList();
                 }
-                if (cbx_DaXacNhan.Checked == true)
+                else
                 {
-                    List<DonHang> tam = ctx.DonHangs.Where(p => p.TrangThai == "Đã Xác Nhận").ToList();
-                    ldh = ldh.Union(tam).ToList();
-                }
-                if (cbx_DangGiaoHang.Checked == true)
-                {
-                    List<DonHang> tam = ctx.DonHangs.Where(p => p.TrangThai == "Đang Giao Hàng").ToList();
-                    ldh = ldh.Union(tam).ToList();
-                }
-                if (cbx_HoanThanh.Checked == true)
-                {
-                    List<DonHang> tam = ctx.DonHangs.Where(p => p.TrangThai == "Hoàn Thành").ToList();
-                    ldh = ldh.Union(tam).ToList();
-                }
-                if (cbx_DaHuy.Checked == true)
-                {
-                    List<DonHang> tam = ctx.DonHangs.Where(p => p.TrangThai == "Đã Hủy").ToList();
-                    ldh = ldh.Union(tam).ToList();
-                }
-            }
-            ldh = ldh.Where(p => p.MaDonHang.ToLower().Contains(MaDH.ToLower())).ToList();
-            ldh = ldh.Where(p => p.NgayDatHang.ToShortDateString() == NgayDatHang).ToList();
-            foreach (var dh in ldh)
-            {
-                int index = dgv_Order.Rows.Add();
-                dgv_Order.Rows[index].Cells[0].Value = dh.MaDonHang;
-                dgv_Order.Rows[index].Cells[1].Value = dh.TaiKhoanKhachHang.KhachHang.HoTen;
-                string s = "";
-                List<ChiTietDonHang> lct = ctx.ChiTietDonHangs.Where(p => p.MaDonHang == dh.MaDonHang).ToList();
-                int d = 0;
-                foreach (var ct in lct)
-                {
-                    if (d != lct.Count - 1)
+                    if (cbx_ChuaXacNhan.Checked == true)
                     {
-                        s = s + ct.TraiCay.TenTraiCay + " " + ct.TraiCay.DonViTinh + "x" + ct.SoLuong + ", ";
-                        d++;
+                        List<DonHang> tam = ctx.DonHangs.Where(p => p.TrangThai == "Chờ Xác Nhận").ToList();
+                        ldh = ldh.Union(tam).ToList();
                     }
-                    else
-                        s = s + ct.TraiCay.TenTraiCay + " " + ct.TraiCay.DonViTinh + "x" + ct.SoLuong + ".";
+                    if (cbx_DaXacNhan.Checked == true)
+                    {
+                        List<DonHang> tam = ctx.DonHangs.Where(p => p.TrangThai == "Đã Xác Nhận").ToList();
+                        ldh = ldh.Union(tam).ToList();
+                    }
+                    if (cbx_DangGiaoHang.Checked == true)
+                    {
+                        List<DonHang> tam = ctx.DonHangs.Where(p => p.TrangThai == "Đang Giao Hàng").ToList();
+                        ldh = ldh.Union(tam).ToList();
+                    }
+                    if (cbx_HoanThanh.Checked == true)
+                    {
+                        List<DonHang> tam = ctx.DonHangs.Where(p => p.TrangThai == "Hoàn Thành").ToList();
+                        ldh = ldh.Union(tam).ToList();
+                    }
+                    if (cbx_DaHuy.Checked == true)
+                    {
+                        List<DonHang> tam = ctx.DonHangs.Where(p => p.TrangThai == "Đã Hủy").ToList();
+                        ldh = ldh.Union(tam).ToList();
+                    }
                 }
-                dgv_Order.Rows[index].Cells[2].Value = s;
-                dgv_Order.Rows[index].Cells[3].Value = dh.ThanhTien;
-                dgv_Order.Rows[index].Cells[4].Value = dh.NgayDatHang.ToShortDateString();
-                dgv_Order.Rows[index].Cells[5].Value = dh.DiaChiGiaoHang;
-                dgv_Order.Rows[index].Cells[6].Value = dh.TrangThai;
+                ldh = ldh.Where(p => p.MaDonHang.ToLower().Contains(MaDH.ToLower())).ToList();
+                ldh = ldh.Where(p => p.NgayDatHang.ToShortDateString() == NgayDatHang).ToList();
+                foreach (var dh in ldh)
+                {
+                    int index = dgv_Order.Rows.Add();
+                    dgv_Order.Rows[index].Cells[0].Value = dh.MaDonHang;
+                    dgv_Order.Rows[index].Cells[1].Value = dh.TaiKhoanKhachHang.KhachHang.HoTen;
+                    string s = "";
+                    List<ChiTietDonHang> lct = ctx.ChiTietDonHangs.Where(p => p.MaDonHang == dh.MaDonHang).ToList();
+                    int d = 0;
+                    foreach (var ct in lct)
+                    {
+                        if (d != lct.Count - 1)
+                        {
+                            s = s + ct.TraiCay.TenTraiCay + " " + ct.TraiCay.DonViTinh + "x" + ct.SoLuong + ", ";
+                            d++;
+                        }
+                        else
+                            s = s + ct.TraiCay.TenTraiCay + " " + ct.TraiCay.DonViTinh + "x" + ct.SoLuong + ".";
+                    }
+                    dgv_Order.Rows[index].Cells[2].Value = s;
+                    dgv_Order.Rows[index].Cells[3].Value = dh.ThanhTien;
+                    dgv_Order.Rows[index].Cells[4].Value = dh.NgayDatHang.ToShortDateString();
+                    dgv_Order.Rows[index].Cells[5].Value = dh.DiaChiGiaoHang;
+                    dgv_Order.Rows[index].Cells[6].Value = dh.TrangThai;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông Báo");
             }
         }
 
@@ -130,21 +137,28 @@ namespace FruitApp
 
         private void dgv_Order_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex != -1 && e.RowIndex != dgv_Order.RowCount - 1)
+            try
             {
-                if (dgv_Order.Rows[e.RowIndex].Cells[6].Value.ToString() != "Đã Hủy" && dgv_Order.Rows[e.RowIndex].Cells[6].Value.ToString() != "Hoàn Thành")
+                if (e.RowIndex != -1 && e.RowIndex != dgv_Order.RowCount - 1)
                 {
-                    btn_ChangeStatus.Enabled = true;
-                    SelectedMaDH = dgv_Order.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    if (dgv_Order.Rows[e.RowIndex].Cells[6].Value.ToString() != "Đã Hủy" && dgv_Order.Rows[e.RowIndex].Cells[6].Value.ToString() != "Hoàn Thành")
+                    {
+                        btn_ChangeStatus.Enabled = true;
+                        SelectedMaDH = dgv_Order.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    }
+                    else
+                    {
+                        btn_ChangeStatus.Enabled = false;
+                    }
                 }
                 else
                 {
                     btn_ChangeStatus.Enabled = false;
                 }
             }
-            else
+            catch(Exception ex)
             {
-                btn_ChangeStatus.Enabled = false;
+                MessageBox.Show(ex.Message, "Thông Báo");
             }
         }
 
@@ -155,35 +169,42 @@ namespace FruitApp
 
         private void btn_ChangeStatus_Click(object sender, EventArgs e)
         {
-            frm_TrangThai_Order f = new frm_TrangThai_Order();
-            f.Owner = this;
-            FruitAppContext ctx = new FruitAppContext();
-            DonHang dh = ctx.DonHangs.FirstOrDefault(p => p.MaDonHang == SelectedMaDH);
-            if(dh.TrangThai == "Đang Giao Hàng")
+            try
             {
-                f.rbtn_DaXacNhan.Enabled = false;
-            }
-            f.ShowDialog();
-            if(f.ans == 1)
-            {
-                if(f.rbtn_DangGiaoHang.Checked == true)
+                frm_TrangThai_Order f = new frm_TrangThai_Order();
+                f.Owner = this;
+                FruitAppContext ctx = new FruitAppContext();
+                DonHang dh = ctx.DonHangs.FirstOrDefault(p => p.MaDonHang == SelectedMaDH);
+                if (dh.TrangThai == "Đang Giao Hàng")
                 {
-                    dh.TrangThai = "Đang Giao Hàng";
+                    f.rbtn_DaXacNhan.Enabled = false;
                 }
-                else
+                f.ShowDialog();
+                if (f.ans == 1)
                 {
-                    if(f.rbtn_DaXacNhan.Checked == true)
+                    if (f.rbtn_DangGiaoHang.Checked == true)
                     {
-                        dh.TrangThai = "Đã Xác Nhận";
+                        dh.TrangThai = "Đang Giao Hàng";
                     }
                     else
                     {
-                        dh.TrangThai = "Hoàn Thành";
+                        if (f.rbtn_DaXacNhan.Checked == true)
+                        {
+                            dh.TrangThai = "Đã Xác Nhận";
+                        }
+                        else
+                        {
+                            dh.TrangThai = "Hoàn Thành";
+                        }
                     }
+                    MessageBox.Show("Thay đổi trạng thái đơn hàng thành công", "Thông Báo");
+                    ctx.SaveChanges();
+                    frm_ManageOrder_Load(sender, e);
                 }
-                MessageBox.Show("Thay đổi trạng thái đơn hàng thành công", "Thông Báo");
-                ctx.SaveChanges();
-                frm_ManageOrder_Load(sender, e);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông Báo");
             }
         }
     }

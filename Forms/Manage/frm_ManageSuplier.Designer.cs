@@ -91,6 +91,7 @@
             // 
             // pnl_DoiTac
             // 
+            this.pnl_DoiTac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.pnl_DoiTac.Controls.Add(this.btn_Sua);
             this.pnl_DoiTac.Controls.Add(this.btn_Them);
             this.pnl_DoiTac.Location = new System.Drawing.Point(0, 0);
@@ -320,6 +321,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.dtpck_ChonNgay);
             this.Controls.Add(this.btn_Huy);

@@ -28,8 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_SP = new System.Windows.Forms.DataGridView();
+            this.clm_MaTraiCay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_TenTraiCay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_LoaiTraiCay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_GiaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_GiaMua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_TonKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lb_MaTraiCay = new System.Windows.Forms.Label();
             this.lb_TenTraiCay = new System.Windows.Forms.Label();
             this.lb_LoaiTraiCay = new System.Windows.Forms.Label();
@@ -39,13 +46,7 @@
             this.btn_ThemSanPham = new System.Windows.Forms.Button();
             this.btn_SuaSanPham = new System.Windows.Forms.Button();
             this.btn_Import = new System.Windows.Forms.Button();
-            this.clm_MaTraiCay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_TenTraiCay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_LoaiTraiCay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_GiaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_GiaMua = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_TonKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_Xoa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SP)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,14 +62,14 @@
             this.clm_GiaBan,
             this.clm_GiaMua,
             this.clm_TonKho});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_SP.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_SP.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_SP.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgv_SP.Location = new System.Drawing.Point(0, 338);
             this.dgv_SP.Name = "dgv_SP";
@@ -79,6 +80,65 @@
             this.dgv_SP.TabIndex = 0;
             this.dgv_SP.TabStop = false;
             this.dgv_SP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_SP_CellClick);
+            // 
+            // clm_MaTraiCay
+            // 
+            this.clm_MaTraiCay.HeaderText = "Mã Trái Cây";
+            this.clm_MaTraiCay.MinimumWidth = 125;
+            this.clm_MaTraiCay.Name = "clm_MaTraiCay";
+            this.clm_MaTraiCay.ReadOnly = true;
+            this.clm_MaTraiCay.Width = 200;
+            // 
+            // clm_TenTraiCay
+            // 
+            this.clm_TenTraiCay.HeaderText = "Tên Trái Cây";
+            this.clm_TenTraiCay.MinimumWidth = 125;
+            this.clm_TenTraiCay.Name = "clm_TenTraiCay";
+            this.clm_TenTraiCay.ReadOnly = true;
+            this.clm_TenTraiCay.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.clm_TenTraiCay.Width = 475;
+            // 
+            // clm_LoaiTraiCay
+            // 
+            this.clm_LoaiTraiCay.HeaderText = "Loại Trái Cây";
+            this.clm_LoaiTraiCay.MinimumWidth = 125;
+            this.clm_LoaiTraiCay.Name = "clm_LoaiTraiCay";
+            this.clm_LoaiTraiCay.ReadOnly = true;
+            this.clm_LoaiTraiCay.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.clm_LoaiTraiCay.Width = 200;
+            // 
+            // clm_DonViTinh
+            // 
+            this.clm_DonViTinh.HeaderText = "Đơn Vị Tính";
+            this.clm_DonViTinh.MinimumWidth = 125;
+            this.clm_DonViTinh.Name = "clm_DonViTinh";
+            this.clm_DonViTinh.ReadOnly = true;
+            this.clm_DonViTinh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.clm_DonViTinh.Width = 200;
+            // 
+            // clm_GiaBan
+            // 
+            this.clm_GiaBan.HeaderText = "Giá Bán";
+            this.clm_GiaBan.MinimumWidth = 100;
+            this.clm_GiaBan.Name = "clm_GiaBan";
+            this.clm_GiaBan.ReadOnly = true;
+            this.clm_GiaBan.Width = 125;
+            // 
+            // clm_GiaMua
+            // 
+            this.clm_GiaMua.HeaderText = "Giá Mua";
+            this.clm_GiaMua.MinimumWidth = 100;
+            this.clm_GiaMua.Name = "clm_GiaMua";
+            this.clm_GiaMua.ReadOnly = true;
+            this.clm_GiaMua.Width = 125;
+            // 
+            // clm_TonKho
+            // 
+            this.clm_TonKho.HeaderText = "Số Lượng";
+            this.clm_TonKho.MinimumWidth = 125;
+            this.clm_TonKho.Name = "clm_TonKho";
+            this.clm_TonKho.ReadOnly = true;
+            this.clm_TonKho.Width = 200;
             // 
             // lb_MaTraiCay
             // 
@@ -167,75 +227,32 @@
             // btn_Import
             // 
             this.btn_Import.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Import.Location = new System.Drawing.Point(1666, 52);
+            this.btn_Import.Location = new System.Drawing.Point(1837, 52);
             this.btn_Import.Name = "btn_Import";
             this.btn_Import.Size = new System.Drawing.Size(123, 38);
             this.btn_Import.TabIndex = 10;
             this.btn_Import.Text = "Import";
             this.btn_Import.UseVisualStyleBackColor = true;
+            this.btn_Import.Click += new System.EventHandler(this.btn_Import_Click);
             // 
-            // clm_MaTraiCay
+            // btn_Xoa
             // 
-            this.clm_MaTraiCay.HeaderText = "Mã Trái Cây";
-            this.clm_MaTraiCay.MinimumWidth = 125;
-            this.clm_MaTraiCay.Name = "clm_MaTraiCay";
-            this.clm_MaTraiCay.ReadOnly = true;
-            this.clm_MaTraiCay.Width = 200;
-            // 
-            // clm_TenTraiCay
-            // 
-            this.clm_TenTraiCay.HeaderText = "Tên Trái Cây";
-            this.clm_TenTraiCay.MinimumWidth = 125;
-            this.clm_TenTraiCay.Name = "clm_TenTraiCay";
-            this.clm_TenTraiCay.ReadOnly = true;
-            this.clm_TenTraiCay.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.clm_TenTraiCay.Width = 475;
-            // 
-            // clm_LoaiTraiCay
-            // 
-            this.clm_LoaiTraiCay.HeaderText = "Loại Trái Cây";
-            this.clm_LoaiTraiCay.MinimumWidth = 125;
-            this.clm_LoaiTraiCay.Name = "clm_LoaiTraiCay";
-            this.clm_LoaiTraiCay.ReadOnly = true;
-            this.clm_LoaiTraiCay.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.clm_LoaiTraiCay.Width = 200;
-            // 
-            // clm_DonViTinh
-            // 
-            this.clm_DonViTinh.HeaderText = "Đơn Vị Tính";
-            this.clm_DonViTinh.MinimumWidth = 125;
-            this.clm_DonViTinh.Name = "clm_DonViTinh";
-            this.clm_DonViTinh.ReadOnly = true;
-            this.clm_DonViTinh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.clm_DonViTinh.Width = 200;
-            // 
-            // clm_GiaBan
-            // 
-            this.clm_GiaBan.HeaderText = "Giá Bán";
-            this.clm_GiaBan.MinimumWidth = 100;
-            this.clm_GiaBan.Name = "clm_GiaBan";
-            this.clm_GiaBan.ReadOnly = true;
-            // 
-            // clm_GiaMua
-            // 
-            this.clm_GiaMua.HeaderText = "Giá Mua";
-            this.clm_GiaMua.MinimumWidth = 100;
-            this.clm_GiaMua.Name = "clm_GiaMua";
-            this.clm_GiaMua.ReadOnly = true;
-            // 
-            // clm_TonKho
-            // 
-            this.clm_TonKho.HeaderText = "Số Lượng";
-            this.clm_TonKho.MinimumWidth = 125;
-            this.clm_TonKho.Name = "clm_TonKho";
-            this.clm_TonKho.ReadOnly = true;
-            this.clm_TonKho.Width = 200;
+            this.btn_Xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Xoa.Location = new System.Drawing.Point(1666, 52);
+            this.btn_Xoa.Name = "btn_Xoa";
+            this.btn_Xoa.Size = new System.Drawing.Size(165, 38);
+            this.btn_Xoa.TabIndex = 11;
+            this.btn_Xoa.Text = "Xóa Trái Cây";
+            this.btn_Xoa.UseVisualStyleBackColor = true;
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
             // frm_ManageProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.btn_Xoa);
             this.Controls.Add(this.btn_Import);
             this.Controls.Add(this.btn_SuaSanPham);
             this.Controls.Add(this.btn_ThemSanPham);
@@ -276,5 +293,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_GiaBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_GiaMua;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_TonKho;
+        private System.Windows.Forms.Button btn_Xoa;
     }
 }

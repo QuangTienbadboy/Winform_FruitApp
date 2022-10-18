@@ -54,6 +54,7 @@
             // 
             // pnl_KhachHang
             // 
+            this.pnl_KhachHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.pnl_KhachHang.Controls.Add(this.btn_Sua);
             this.pnl_KhachHang.Location = new System.Drawing.Point(0, 0);
             this.pnl_KhachHang.Name = "pnl_KhachHang";
@@ -265,6 +266,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.dtpck_ChonNgay);
             this.Controls.Add(this.btn_Huy);
