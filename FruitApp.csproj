@@ -42,9 +42,52 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="EPPlus, Version=6.0.8.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.6.0.8\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.Interfaces.6.0.0\lib\net452\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.0.0.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.System.Drawing.6.0.0\lib\net452\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -128,8 +171,46 @@
     <Compile Include="Forms\Manage\frm_ManageUserAccount.Designer.cs">
       <DependentUpon>frm_ManageUserAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Manage\frm_ThongTin_Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Manage\frm_ThongTin_Employee.Designer.cs">
+      <DependentUpon>frm_ThongTin_Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Manage\frm_ThongTin_Product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Manage\frm_ThongTin_Product.Designer.cs">
+      <DependentUpon>frm_ThongTin_Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Manage\frm_TrangThai_Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Manage\frm_TrangThai_Order.Designer.cs">
+      <DependentUpon>frm_TrangThai_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Report.Designer.cs">
+      <DependentUpon>frm_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChiTietDonHang.cs" />
+    <Compile Include="Models\ChiTietDonHangReport.cs" />
+    <Compile Include="Models\ThuNhap.cs" />
+    <Compile Include="Models\DoiTac.cs" />
+    <Compile Include="Models\DonHang.cs" />
+    <Compile Include="Models\FruitAppContext.cs" />
+    <Compile Include="Models\KhachHang.cs" />
+    <Compile Include="Models\LoaiTraiCay.cs" />
+    <Compile Include="Models\NhanVien.cs" />
+    <Compile Include="Models\TaiKhoanKhachHang.cs" />
+    <Compile Include="Models\TaiKhoanQuanLy.cs" />
+    <Compile Include="Models\TraiCay.cs" />
+    <Compile Include="Models\TraiCayBanTrongNgay.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Forms\frm_Cart.resx">
       <DependentUpon>frm_Cart.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +247,18 @@
     <EmbeddedResource Include="Forms\Manage\frm_ManageUserAccount.resx">
       <DependentUpon>frm_ManageUserAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Manage\frm_ThongTin_Employee.resx">
+      <DependentUpon>frm_ThongTin_Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Manage\frm_ThongTin_Product.resx">
+      <DependentUpon>frm_ThongTin_Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Manage\frm_TrangThai_Order.resx">
+      <DependentUpon>frm_TrangThai_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Report.resx">
+      <DependentUpon>frm_Report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -176,7 +269,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="Report4.rdlc" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\FruitApp.Models.ChiTietDonHangReport.datasource" />
+    <None Include="Properties\DataSources\FruitApp.Models.DonHang.datasource" />
+    <None Include="Properties\DataSources\FruitApp.Models.ThuNhap.datasource" />
+    <None Include="Properties\DataSources\FruitApp.Models.TraiCayBanTrongNgay.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -191,7 +292,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Images\Employee-Avatar\NV1.png" />
     <Content Include="Assets\Images\Icons\icons8-bussiness-man-64.png" />
     <Content Include="Assets\Images\Icons\icons8-close-48.png" />
     <Content Include="Assets\Images\Icons\icons8-employees-64.png" />
@@ -201,6 +301,17 @@
     <Content Include="Assets\Images\Icons\icons8-user-48.png" />
     <Content Include="Assets\Images\Icons\icons8-warehouse-64.png" />
     <Content Include="Assets\Images\KhachHang\KH0001.png" />
+    <Content Include="Assets\Images\Login_Register\cat.png" />
+    <Content Include="Assets\Images\Login_Register\clipboard.png" />
+    <Content Include="Assets\Images\Login_Register\coffee-cup.png" />
+    <Content Include="Assets\Images\Login_Register\connection.png" />
+    <Content Include="Assets\Images\Login_Register\email.png" />
+    <Content Include="Assets\Images\Login_Register\padlock.png" />
+    <Content Include="Assets\Images\Login_Register\password %281%29.png" />
+    <Content Include="Assets\Images\Login_Register\password.png" />
+    <Content Include="Assets\Images\Login_Register\security.png" />
+    <Content Include="Assets\Images\Login_Register\user.png" />
+    <Content Include="Assets\Images\Login_Register\website.png" />
     <Content Include="Assets\Images\NhanVien\NV0001.png" />
     <Content Include="Assets\Images\TraiCay\CA0001.jpg" />
     <Content Include="Assets\Images\TraiCay\CA0002.jpg" />
@@ -213,7 +324,21 @@
     <Content Include="Assets\Images\TraiCay\TA0003.jpg" />
     <Content Include="Assets\Images\TraiCay\TDH001.jpg" />
     <Content Include="Assets\Images\TraiCay\TDH002.jpg" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
