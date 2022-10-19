@@ -100,7 +100,7 @@ namespace FruitApp
                     };
                     connectDB.TaiKhoanKhachHangs.Add(tkkh);
                     connectDB.SaveChanges();
-
+                    MessageBox.Show("Đăng ký thành công");
 
                     frm_SignIn frm_SignIn = new frm_SignIn();
                     frm_SignIn.Show();
