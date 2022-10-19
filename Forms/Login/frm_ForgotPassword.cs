@@ -54,7 +54,10 @@ namespace FruitApp
                 {
                     throw new Exception("Yêu cầu nhập mật khẩu dài hơn 8 kí tự");
                 }
-
+                if (!Regex.IsMatch(txtMatKhauMoi.Text, @"^(?=.*[a-zA-Z])(?=.*[0-9])"))
+                {
+                    throw new Exception("Yêu cầu nhập đủ cả kí tự lẫn số");
+                }
                 if (txtMatKhauMoi.Text != txtNhapLaiMatKhauMoi.Text)
                 {
                     throw new Exception("Yêu cầu nhập lại mật khẩu phải trùng");
