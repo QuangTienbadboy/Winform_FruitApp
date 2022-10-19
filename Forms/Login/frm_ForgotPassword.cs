@@ -65,6 +65,10 @@ namespace FruitApp
                 TaiKhoanKhachHang khUpdate = connectDB.TaiKhoanKhachHangs.FirstOrDefault(p => p.Email == txtQuenTaiKhoan.Text);
                 if (khUpdate != null)
                 {
+                    if (khUpdate.MatKhau == txtMatKhauMoi.Text)
+                    {
+                        throw new Exception("Yêu cầu mật khẩu mới không được trùng mật khẩu cũ");
+                    }
                     khUpdate.MatKhau = txtMatKhauMoi.Text;
                     connectDB.SaveChanges();
                     MessageBox.Show("Đổi mật khẩu thành công");
