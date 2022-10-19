@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{014CB758-70DD-4A98-BD8E-544659C53D0B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FruitApp</RootNamespace>
+    <AssemblyName>FruitApp</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=6.0.8.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.6.0.8\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.Interfaces.6.0.0\lib\net452\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.0.0.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.System.Drawing.6.0.0\lib\net452\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\frm_Cart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Cart.Designer.cs">
+      <DependentUpon>frm_Cart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Statistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Statistic.Designer.cs">
+      <DependentUpon>frm_Statistic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login\frm_ForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login\frm_ForgotPassword.Designer.cs">
+      <DependentUpon>frm_ForgotPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login\frm_SignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login\frm_SignIn.Designer.cs">
+      <DependentUpon>frm_SignIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login\frm_SignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login\frm_SignUp.Designer.cs">
+      <DependentUpon>frm_SignUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainPage\frm_MainPage_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainPage\frm_MainPage_Admin.Designer.cs">
+      <DependentUpon>frm_MainPage_Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainPage\frm_MainPage_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainPage\frm_MainPage_User.Designer.cs">
+      <DependentUpon>frm_MainPage_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Manage\frm_ManageEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Manage\frm_ManageEmployee.Designer.cs">
+      <DependentUpon>frm_ManageEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Manage\frm_ManageOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Manage\frm_ManageOrder.Designer.cs">
+      <DependentUpon>frm_ManageOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Manage\frm_ManageProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Manage\frm_ManageProduct.Designer.cs">
+      <DependentUpon>frm_ManageProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Manage\frm_ManageSuplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Manage\frm_ManageSuplier.Designer.cs">
+      <DependentUpon>frm_ManageSuplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Manage\frm_ManageUserAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Manage\frm_ManageUserAccount.Designer.cs">
+      <DependentUpon>frm_ManageUserAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Manage\frm_ThongTin_Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Manage\frm_ThongTin_Employee.Designer.cs">
+      <DependentUpon>frm_ThongTin_Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Manage\frm_ThongTin_Product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Manage\frm_ThongTin_Product.Designer.cs">
+      <DependentUpon>frm_ThongTin_Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Manage\frm_TrangThai_Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Manage\frm_TrangThai_Order.Designer.cs">
+      <DependentUpon>frm_TrangThai_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Report.Designer.cs">
+      <DependentUpon>frm_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChiTietDonHang.cs" />
+    <Compile Include="Models\ChiTietDonHangReport.cs" />
+    <Compile Include="Models\ThuNhap.cs" />
+    <Compile Include="Models\DoiTac.cs" />
+    <Compile Include="Models\DonHang.cs" />
+    <Compile Include="Models\FruitAppContext.cs" />
+    <Compile Include="Models\KhachHang.cs" />
+    <Compile Include="Models\LoaiTraiCay.cs" />
+    <Compile Include="Models\NhanVien.cs" />
+    <Compile Include="Models\TaiKhoanKhachHang.cs" />
+    <Compile Include="Models\TaiKhoanQuanLy.cs" />
+    <Compile Include="Models\TraiCay.cs" />
+    <Compile Include="Models\TraiCayBanTrongNgay.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Forms\frm_Cart.resx">
+      <DependentUpon>frm_Cart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Statistic.resx">
+      <DependentUpon>frm_Statistic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login\frm_ForgotPassword.resx">
+      <DependentUpon>frm_ForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login\frm_SignIn.resx">
+      <DependentUpon>frm_SignIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login\frm_SignUp.resx">
+      <DependentUpon>frm_SignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainPage\frm_MainPage_Admin.resx">
+      <DependentUpon>frm_MainPage_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainPage\frm_MainPage_User.resx">
+      <DependentUpon>frm_MainPage_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Manage\frm_ManageEmployee.resx">
+      <DependentUpon>frm_ManageEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Manage\frm_ManageOrder.resx">
+      <DependentUpon>frm_ManageOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Manage\frm_ManageProduct.resx">
+      <DependentUpon>frm_ManageProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Manage\frm_ManageSuplier.resx">
+      <DependentUpon>frm_ManageSuplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Manage\frm_ManageUserAccount.resx">
+      <DependentUpon>frm_ManageUserAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Manage\frm_ThongTin_Employee.resx">
+      <DependentUpon>frm_ThongTin_Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Manage\frm_ThongTin_Product.resx">
+      <DependentUpon>frm_ThongTin_Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Manage\frm_TrangThai_Order.resx">
+      <DependentUpon>frm_TrangThai_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Report.resx">
+      <DependentUpon>frm_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="Report4.rdlc" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\FruitApp.Models.ChiTietDonHangReport.datasource" />
+    <None Include="Properties\DataSources\FruitApp.Models.DonHang.datasource" />
+    <None Include="Properties\DataSources\FruitApp.Models.ThuNhap.datasource" />
+    <None Include="Properties\DataSources\FruitApp.Models.TraiCayBanTrongNgay.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Images\Icons\icons8-bussiness-man-64.png" />
+    <Content Include="Assets\Images\Icons\icons8-close-48.png" />
+    <Content Include="Assets\Images\Icons\icons8-employees-64.png" />
+    <Content Include="Assets\Images\Icons\icons8-fruit-58.png" />
+    <Content Include="Assets\Images\Icons\icons8-graphs-64.png" />
+    <Content Include="Assets\Images\Icons\icons8-shopping-cart-48.png" />
+    <Content Include="Assets\Images\Icons\icons8-user-48.png" />
+    <Content Include="Assets\Images\Icons\icons8-warehouse-64.png" />
+    <Content Include="Assets\Images\KhachHang\KH0001.png" />
+    <Content Include="Assets\Images\Login_Register\cat.png" />
+    <Content Include="Assets\Images\Login_Register\clipboard.png" />
+    <Content Include="Assets\Images\Login_Register\coffee-cup.png" />
+    <Content Include="Assets\Images\Login_Register\connection.png" />
+    <Content Include="Assets\Images\Login_Register\email.png" />
+    <Content Include="Assets\Images\Login_Register\padlock.png" />
+    <Content Include="Assets\Images\Login_Register\password %281%29.png" />
+    <Content Include="Assets\Images\Login_Register\password.png" />
+    <Content Include="Assets\Images\Login_Register\security.png" />
+    <Content Include="Assets\Images\Login_Register\user.png" />
+    <Content Include="Assets\Images\Login_Register\website.png" />
+    <Content Include="Assets\Images\NhanVien\NV0001.png" />
+    <Content Include="Assets\Images\TraiCay\CA0001.jpg" />
+    <Content Include="Assets\Images\TraiCay\CA0002.jpg" />
+    <Content Include="Assets\Images\TraiCay\CH0001.jpg" />
+    <Content Include="Assets\Images\TraiCay\CH0002.jpg" />
+    <Content Include="Assets\Images\TraiCay\DL0001.jpg" />
+    <Content Include="Assets\Images\TraiCay\NH0001.jpg" />
+    <Content Include="Assets\Images\TraiCay\TA0001.jpg" />
+    <Content Include="Assets\Images\TraiCay\TA0002.jpg" />
+    <Content Include="Assets\Images\TraiCay\TA0003.jpg" />
+    <Content Include="Assets\Images\TraiCay\TDH001.jpg" />
+    <Content Include="Assets\Images\TraiCay\TDH002.jpg" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
