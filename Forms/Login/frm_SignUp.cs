@@ -47,6 +47,11 @@ namespace FruitApp
                 {
                     throw new Exception("Yêu cầu nhập mật khẩu");
                 }
+                if (!Regex.IsMatch(txtDangKyMatKhau.Text, @"^(?=.*[a-zA-Z])(?=.*[0-9])"))
+                {
+                    throw new Exception("Yêu cầu nhập đủ cả kí tự lẫn số");
+                }
+
                 if (Regex.IsMatch(txtDangKyEmail.Text, pattern) == false)
                 {
                     throw new Exception("Yêu cầu nhập đúng định dạng email");
