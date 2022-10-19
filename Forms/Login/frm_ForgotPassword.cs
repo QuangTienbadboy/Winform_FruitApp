@@ -8,7 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FruitApp.Model;
+using FruitApp.Models;
 using System.Net;
 using System.Net.Mail;
 using static System.Data.Entity.Infrastructure.Design.Executor;
@@ -21,7 +21,7 @@ namespace FruitApp
         String randomCodeQuenMatKhau;
         public static String to;
 
-        ModelFruitApp connectDB = new ModelFruitApp();
+        FruitAppContext connectDB = new FruitAppContext();
 
         string pattern = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
 
@@ -85,6 +85,17 @@ namespace FruitApp
         {
 
         }
+        public void SetTimeout(Action action, int timeout)
+        {
+            var timer = new Timer();
+            timer.Interval = timeout;
+            timer.Tick += (s, e) =>
+            {
+                action();
+                timer.Stop();
+            };
+            timer.Start();
+        }
 
         private void btnOTPQuenMatKhau_Click(object sender, EventArgs e)
         {
@@ -124,7 +135,12 @@ namespace FruitApp
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.Credentials = new NetworkCredential(from, pass);
 
-                
+                var action = new Action(() =>
+                {
+                    randomCodeQuenMatKhau = "";
+                });
+
+                SetTimeout(action, 300000);
                 smtp.Send(message);
                 MessageBox.Show("Code Send Successfully");
                 

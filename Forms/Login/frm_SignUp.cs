@@ -9,7 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FruitApp.Model;
+using FruitApp.Models;
 using System.Net;
 using System.Net.Mail;
 
@@ -20,7 +20,7 @@ namespace FruitApp
         String randomCode;
         public static String to;
 
-        ModelFruitApp connectDB = new ModelFruitApp();
+        FruitAppContext connectDB = new FruitAppContext();
 
         public frm_SignUp()
         {
@@ -137,6 +137,18 @@ namespace FruitApp
             //}
         }
 
+        public void SetTimeout(Action action, int timeout)
+        {
+            var timer = new Timer();
+            timer.Interval = timeout;
+            timer.Tick += (s, e) =>
+            {
+                action();
+                timer.Stop();
+            };
+            timer.Start();
+        }
+
         private void btnOTPDangKy_Click(object sender, EventArgs e)
         {
 
@@ -165,10 +177,18 @@ namespace FruitApp
             smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
             smtp.Credentials = new NetworkCredential(from, pass);
 
+
+
             try
             {
                 smtp.Send(message);
                 MessageBox.Show("Code Send Successfully");
+                var action = new Action(() =>
+                {
+                    randomCode = "";
+                });
+
+                SetTimeout(action, 300000);
             }
             catch (Exception ex)
             {

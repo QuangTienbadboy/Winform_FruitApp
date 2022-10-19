@@ -9,13 +9,13 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FruitApp.Model;
+using FruitApp.Models;
 
 namespace FruitApp
 {
     public partial class frm_SignIn : Form
     {
-        ModelFruitApp connectDB = new ModelFruitApp();
+        FruitAppContext connectDB = new FruitAppContext();
         public frm_SignIn()
         {
             InitializeComponent();
