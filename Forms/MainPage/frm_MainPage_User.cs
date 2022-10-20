@@ -1,25 +1,29 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DoAn;
+using FruitApp;
 using FruitApp.Models;
 
 namespace baithi
 {
     public partial class frm_MainPage_User : Form
     {
-
+        frm_Cart f = new frm_Cart();
+       
         FruitAppContext ctx = new FruitAppContext();
         public frm_MainPage_User()
         {
             InitializeComponent();
         }
-
+        internal string matk;
         private void Form1_Load(object sender, EventArgs e)
         {
             loadcbb();
@@ -268,12 +272,43 @@ namespace baithi
 
         private void btnMua_Click(object sender, EventArgs e)
         {
-
+            f.ThemSP(Ma1);
         }
 
         private void frm_MainPage_User_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnGioHang_Click(object sender, EventArgs e)
+        {
+           f.Owner=this;
+            f.Show();
+            this.Hide();
+        }
+
+        private void đơnHàngCủaTôiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Donhang frm = new frm_Donhang();
+            frm.Owner = this;
+            frm.matk = matk;
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnMua2_Click(object sender, EventArgs e)
+        {
+            f.ThemSP(Ma2);
+        }
+
+        private void btnMua3_Click(object sender, EventArgs e)
+        {
+            f.ThemSP(Ma3);
+        }
+
+        private void btnMua4_Click(object sender, EventArgs e)
+        {
+            f.ThemSP(Ma4);
         }
     }
 }
