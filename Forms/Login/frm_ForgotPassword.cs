@@ -155,7 +155,7 @@ namespace FruitApp
                 SetTimeout(action, 300000);
                 smtp.Send(message);
                 MessageBox.Show("Code Send Successfully");
-                
+                emailHienTai = txtQuenTaiKhoan.Text;
 
             }
             catch (Exception ex)
