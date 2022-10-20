@@ -20,6 +20,7 @@ namespace FruitApp
     {
         String randomCodeQuenMatKhau;
         public static String to;
+         string emailHienTai;
 
         FruitAppContext connectDB = new FruitAppContext();
 
@@ -61,6 +62,10 @@ namespace FruitApp
                 if (txtMatKhauMoi.Text != txtNhapLaiMatKhauMoi.Text)
                 {
                     throw new Exception("Yêu cầu nhập lại mật khẩu phải trùng");
+                }
+                if (emailHienTai != txtQuenTaiKhoan.Text)
+                {
+                    throw new Exception("Tài khoản phải khớp với tài khoản như đã đăng ký");
                 }
                 TaiKhoanKhachHang khUpdate = connectDB.TaiKhoanKhachHangs.FirstOrDefault(p => p.Email == txtQuenTaiKhoan.Text);
                 if (khUpdate != null)
