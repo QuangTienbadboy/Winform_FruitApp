@@ -19,6 +19,7 @@ namespace FruitApp
     {
         String randomCode;
         public static String to;
+        string emailHienTai;
 
         FruitAppContext connectDB = new FruitAppContext();
 
@@ -79,6 +80,10 @@ namespace FruitApp
                 if (randomCode == (txtOTPDangKy.Text).ToString())
                 {
                     to = txtDangKyEmail.Text;
+                    if (emailHienTai != txtDangKyEmail.Text)
+                    {
+                        throw new Exception("Tài khoản phải khớp như đã đăng ký");
+                    }
 
                     int allKH = connectDB.KhachHangs.Count();
                     KhachHang kh = new KhachHang()
@@ -188,6 +193,7 @@ namespace FruitApp
             {
                 smtp.Send(message);
                 MessageBox.Show("Code Send Successfully");
+                emailHienTai = txtDangKyEmail.Text;
                 var action = new Action(() =>
                 {
                     randomCode = "";
