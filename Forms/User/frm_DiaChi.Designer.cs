@@ -3,7 +3,7 @@ namespace DoAn
     partial class DiaChi
     {
         /// <summary>
-        /// Required designer variable.
+        /// Required designer variable.a
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
