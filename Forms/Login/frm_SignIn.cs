@@ -94,7 +94,9 @@ namespace FruitApp
                     else
                     {
                         frm_MainPage_User f = new frm_MainPage_User();
+                        
                         f.Owner = this;
+                        f.matk =kh.MaKhachHang;
                         f.Show();
                         this.Hide();
                     }
