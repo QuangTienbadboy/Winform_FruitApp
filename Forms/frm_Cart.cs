@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -46,9 +47,12 @@ namespace FruitApp
 
         private void btxoa_click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn Có Muốn Xóa Mặt Hàng Này Không!", "Xóa Mặt Hàng Này!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (SelectedRow != -1)
             {
-                DataGW1.Rows.RemoveAt(SelectedRow);
+                if (MessageBox.Show("Bạn Có Muốn Xóa Mặt Hàng Này Không!", "Xóa Mặt Hàng Này!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    DataGW1.Rows.RemoveAt(SelectedRow);
+                }
             }
         }
 
@@ -188,11 +192,12 @@ namespace FruitApp
             if (f.t == 1)
             {
                 FruitAppContext s = new FruitAppContext();
+                string mataikhoan = s.TaiKhoanKhachHangs.FirstOrDefault(p => p.MaKhachHang == matk).MaTaiKhoan;
                 string MDH = newMaDH(s.DonHangs.Max(p => p.MaDonHang));
                 DonHang DH = new DonHang()
                 {
                     MaDonHang = MDH,
-                    MaTaiKhoan = matk,
+                    MaTaiKhoan = mataikhoan,
                     NgayDatHang = DateTime.Now,
                     ThanhTien = int.Parse(txtTongTien.Text),
                     TrangThai = "Chờ Xác Nhận",
@@ -202,24 +207,22 @@ namespace FruitApp
 
                 };
                 s.DonHangs.Add(DH);
-                s.SaveChanges();
-                for (int i = 0; i < DataGW1.Rows.Count; i++)
+                for (int i = 0; i < DataGW1.Rows.Count -1; i++)
                 {
 
                     string MaTraiCay = DataGW1.Rows[i].Cells[0].Value.ToString();
-                    MessageBox.Show(MaTraiCay);
                     ChiTietDonHang ct = new ChiTietDonHang()
 
                     {
                         MaDonHang = MDH,
                         MaTraiCay = MaTraiCay,
                         GiaBan = s.TraiCays.FirstOrDefault(p => p.MaTraiCay == MaTraiCay).GiaBan,
-                        SoLuong = int.Parse(DataGW1.Rows[i].Cells[2].Value.ToString())
+                        SoLuong = int.Parse(DataGW1.Rows[i].Cells[2].Value.ToString()),
                     };
                     s.ChiTietDonHangs.Add(ct);
-                    s.SaveChanges();
+                    
                 }
-
+                s.SaveChanges();
 
                 DataGW1.Rows.Clear();
 

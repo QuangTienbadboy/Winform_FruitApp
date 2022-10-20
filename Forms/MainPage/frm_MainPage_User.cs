@@ -327,6 +327,7 @@ namespace baithi
         {
             frm_Information f = new frm_Information();
             f.Owner = this;
+            f.matk = matk;
             f.Show();
             this.Hide();
         }

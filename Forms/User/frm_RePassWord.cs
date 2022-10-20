@@ -50,8 +50,7 @@ namespace baithi
                     khUpdate.MatKhau = txtMKMoi.Text;
                     ctx.SaveChanges();
                     MessageBox.Show("Đổi mật khẩu thành công");      
-                    new frm_RePassWord().Show();
-                    this.Hide();
+                    
 
                 }
                 else

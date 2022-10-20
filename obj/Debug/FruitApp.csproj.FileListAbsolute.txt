@@ -208,3 +208,4 @@ C:\Users\ASUS\Dropbox\PC\Desktop\FruitApp\FruitApp\bin\Debug\ru\Microsoft.Report
 C:\Users\ASUS\Dropbox\PC\Desktop\FruitApp\FruitApp\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\ASUS\Dropbox\PC\Desktop\FruitApp\FruitApp\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\ASUS\Dropbox\PC\Desktop\FruitApp\FruitApp\obj\Debug\FruitApp.csproj.CopyComplete
+C:\Users\ASUS\Dropbox\PC\Desktop\FruitApp\FruitApp\obj\Debug\DoAn.DiaChi.resources

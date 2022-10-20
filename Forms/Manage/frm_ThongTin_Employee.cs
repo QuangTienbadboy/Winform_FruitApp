@@ -33,8 +33,6 @@ namespace FruitApp.Forms.Manage
             dtpck_NgayBD.MaxDate = DateTime.Now;
             dtpck_NgaySinh.MinDate = new DateTime(DateTime.Now.Year - 65, DateTime.Now.Month, DateTime.Now.Day);
             dtpck_NgaySinh.MaxDate = new DateTime(DateTime.Now.Year - 18, DateTime.Now.Month, DateTime.Now.Day);
-            tb_NgaySinh.Clear();
-            tb_NgayBD.Clear();
         }
 
         internal int ans = 0;
@@ -77,6 +75,8 @@ namespace FruitApp.Forms.Manage
                 {
                     flag = false;
                     if(tb_DienThoai.Text.Length != 10)
+                        flag = true;
+                    if (tb_DienThoai.Text[0] != 48)
                         flag = true;
                     foreach (char c in tb_DienThoai.Text)
                     {

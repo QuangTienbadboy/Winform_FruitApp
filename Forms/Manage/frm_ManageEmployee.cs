@@ -202,6 +202,8 @@ namespace FruitApp.Forms.Manage
                 f.Owner = this;
                 f.lb_CapNhat.Visible = false;
                 f.tb_MaNV.Text = newMaNV(ctx.NhanViens.Max(p => p.MaNhanVien));
+                f.tb_NgaySinh.Clear();
+                f.tb_NgayBD.Clear();
                 f.loadCombobox();
                 f.ShowDialog();
                 if (f.ans == 1)
@@ -242,6 +244,8 @@ namespace FruitApp.Forms.Manage
                 f.tb_MaNV.Text = nv.MaNhanVien;
                 f.tb_DiaChi.Text = nv.DiaChi;
                 f.tb_DienThoai.Text = nv.DienThoai;
+                f.dtpck_NgaySinh.Value = nv.NgaySinh;
+                f.dtpck_NgayBD.Value = nv.NgayBatDauLamViec;
                 f.tb_NgayBD.Text = nv.NgayBatDauLamViec.ToShortDateString();
                 f.tb_NgaySinh.Text = nv.NgaySinh.ToShortDateString();
                 f.tb_TenNV.Text = nv.TenNhanVien;

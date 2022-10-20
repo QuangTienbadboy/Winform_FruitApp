@@ -74,7 +74,7 @@ namespace FruitApp
 
         private void resetDTPCKTC()
         {
-            dtpck_DenNgay.Value = new DateTime(2022, 10, 17);
+            dtpck_DenNgay.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
             dtpck_TuNgay.Value = new DateTime(2022, 10, 01);
             tb_DenNgay.Clear();
             tb_TuNgay.Clear();
@@ -83,7 +83,7 @@ namespace FruitApp
 
         private void resetDTPCKDH()
         {
-            dtpck_DenNgayDH.Value = new DateTime(2022, 10, 17);
+            dtpck_DenNgayDH.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
             dtpck_TuNgayDH.Value = new DateTime(2022, 10, 01);
             tb_DenNgayDH.Clear();
             tb_TuNgayDH.Clear();

@@ -152,6 +152,7 @@ namespace FruitApp
                         {
                             flag = true;
                         }
+                        if (tb_DienThoai.Text[0] != 48)
                         foreach (char c in tb_DienThoai.Text)
                         {
                             if (c < 48 || c > 57)

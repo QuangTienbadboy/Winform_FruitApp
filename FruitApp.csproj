@@ -289,6 +289,9 @@
     <EmbeddedResource Include="Forms\User\frm_RePassWord.resx">
       <DependentUpon>frm_RePassWord.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\frn_DiaChi.resx">
+      <DependentUpon>frn_DiaChi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

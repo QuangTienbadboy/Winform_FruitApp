@@ -30,21 +30,16 @@ namespace baithi
         {
             load();
         }
+        internal string matk;
         public void load()
         {
            
-            List<TaiKhoanKhachHang> khachHangs = ctx.TaiKhoanKhachHangs.ToList();
-            foreach (var item in khachHangs)
-            {
-                txtHoTen.Text = item.KhachHang.HoTen;
-                txtDienThoai.Text = item.KhachHang.DienThoai;
-                txtDiaChi.Text = item.KhachHang.DiaChi;
-                txtEmail.Text =  item.Email;
-                txtNgaySinh.Text = item.KhachHang.NgaySinh.ToString();
-
-
-           
-            }
+            TaiKhoanKhachHang tk = ctx.TaiKhoanKhachHangs.FirstOrDefault(p => p.MaKhachHang == matk);
+                txtHoTen.Text = tk.KhachHang.HoTen;
+                txtDienThoai.Text = tk.KhachHang.DienThoai;
+                txtDiaChi.Text = tk.KhachHang.DiaChi;
+                txtEmail.Text =  tk.Email;
+                txtNgaySinh.Text = tk.KhachHang.NgaySinh.ToString();
         }
         private void Thông_tin_cá_nhân_Load(object sender, EventArgs e)
         {
@@ -54,6 +49,7 @@ namespace baithi
         private void button2_Click(object sender, EventArgs e)
         {
             frm_ReInformation f = new frm_ReInformation();
+            f.matk = matk;
             f.Owner = this;
             f.Show();
             this.Hide();

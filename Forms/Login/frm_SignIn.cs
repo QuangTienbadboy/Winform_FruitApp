@@ -69,6 +69,8 @@ namespace FruitApp
                     } else
                     {
                         frm_MainPage_Admin f = new frm_MainPage_Admin();
+                        txtLoginEmail.Text = "";
+                        txtLoginPassword.Text = "";
                         f.Owner = this;
                         f.Show();
                         this.Hide();
@@ -94,7 +96,8 @@ namespace FruitApp
                     else
                     {
                         frm_MainPage_User f = new frm_MainPage_User();
-                        
+                        txtLoginEmail.Text = "";
+                        txtLoginPassword.Text = "";
                         f.Owner = this;
                         f.matk =kh.MaKhachHang;
                         f.Show();

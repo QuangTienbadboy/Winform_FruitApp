@@ -40,7 +40,7 @@ namespace baithi
                         DateTime theDate = dateTimePicker1.Value.Date;
                         db.KhachHang.NgaySinh = theDate;
                         ctx.SaveChanges();
-                        new frm_Information().Show();
+                    this.Owner.Show();
                         this.Hide();
                     
            
@@ -54,18 +54,22 @@ namespace baithi
             }
         }
 
+        
+        public void load()
+        {
+
+            
+        }
+        internal string matk;
         private void SuaThongTin_Load(object sender, EventArgs e)
         {
-            List<TaiKhoanKhachHang> khachHangs = ctx.TaiKhoanKhachHangs.ToList();
-            foreach (var item in khachHangs)
-            {
-                txtHoTen.Text = item.KhachHang.HoTen;
-                txtDienThoai.Text = item.KhachHang.DienThoai;
-                txtDiaChi.Text = item.KhachHang.DiaChi;
-                txtEmail.Text = item.Email;
-                dateTimePicker1.Text = item.KhachHang.NgaySinh.ToString();
-
-            }
+            TaiKhoanKhachHang tk = ctx.TaiKhoanKhachHangs.FirstOrDefault(p => p.MaKhachHang == matk);
+            txtHoTen.Text = tk.KhachHang.HoTen;
+            txtDienThoai.Text = tk.KhachHang.DienThoai;
+            txtDiaChi.Text = tk.KhachHang.DiaChi;
+            txtEmail.Text = tk.Email;
+            if(tk.KhachHang.NgaySinh != null)
+                dateTimePicker1.Value = (DateTime)tk.KhachHang.NgaySinh;
         }
            private void btnThoat_Click(object sender, EventArgs e)
         {

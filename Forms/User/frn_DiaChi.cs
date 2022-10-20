@@ -28,7 +28,7 @@ namespace DoAn
         {
             try
             {
-                if (txtDiaChiNhanHang.Text != "")
+                if (textBox1.Text != "")
                 {
                     t = 1;
                     MessageBox.Show("Bạn Đã Đặt Hàng Thành Công");
