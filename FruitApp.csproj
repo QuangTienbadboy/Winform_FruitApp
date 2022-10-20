@@ -177,6 +177,30 @@
     <Compile Include="Forms\frm_Report.Designer.cs">
       <DependentUpon>frm_Report.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\User\frm_CTProDucts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\frm_CTProDucts.Designer.cs">
+      <DependentUpon>frm_CTProDucts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\frm_Information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\frm_Information.Designer.cs">
+      <DependentUpon>frm_Information.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\frm_ReInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\frm_ReInformation.Designer.cs">
+      <DependentUpon>frm_ReInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\frm_RePassWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\frm_RePassWord.Designer.cs">
+      <DependentUpon>frm_RePassWord.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\ChiTietDonHang.cs" />
     <Compile Include="Models\ChiTietDonHangReport.cs" />
     <Compile Include="Models\ThuNhap.cs" />
@@ -240,6 +264,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm_Report.resx">
       <DependentUpon>frm_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\frm_CTProDucts.resx">
+      <DependentUpon>frm_CTProDucts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\frm_Information.resx">
+      <DependentUpon>frm_Information.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\frm_ReInformation.resx">
+      <DependentUpon>frm_ReInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\frm_RePassWord.resx">
+      <DependentUpon>frm_RePassWord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -306,6 +342,7 @@
     <Content Include="Assets\Images\TraiCay\TA0003.jpg" />
     <Content Include="Assets\Images\TraiCay\TDH001.jpg" />
     <Content Include="Assets\Images\TraiCay\TDH002.jpg" />
+    <Content Include="Forms\User\New Text Document.txt" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FruitApp.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +9,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using baithi.Models;
 namespace baithi
 {
     public partial class frm_RePassWord : Form
@@ -43,7 +43,7 @@ namespace baithi
                 {
                     throw new Exception("Yêu cầu nhập lại mật khẩu phải trùng");
                 }
-                TaiKhoanKhachHang khUpdate = ctx.TaiKhoanKhachHang.FirstOrDefault(p => p.MatKhau == txtMKCu.Text); 
+                TaiKhoanKhachHang khUpdate = ctx.TaiKhoanKhachHangs.FirstOrDefault(p => p.MatKhau == txtMKCu.Text); 
 
                 if (khUpdate != null)
                 {

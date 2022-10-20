@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FruitApp.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using baithi.Models;
 
 namespace baithi
 {
@@ -28,7 +28,7 @@ namespace baithi
                 if (!System.Text.RegularExpressions.Regex.IsMatch(txtDienThoai.Text, @"^([0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})$"))
                     throw new Exception("Dien Thoai ko Hop le");
               
-                TaiKhoanKhachHang db = ctx.TaiKhoanKhachHang.FirstOrDefault(p => p.Email == txtEmail.Text);
+                TaiKhoanKhachHang db = ctx.TaiKhoanKhachHangs.FirstOrDefault(p => p.Email == txtEmail.Text);
 
                     if (db != null)
                     {
@@ -56,7 +56,7 @@ namespace baithi
 
         private void SuaThongTin_Load(object sender, EventArgs e)
         {
-            List<TaiKhoanKhachHang> khachHangs = ctx.TaiKhoanKhachHang.ToList();
+            List<TaiKhoanKhachHang> khachHangs = ctx.TaiKhoanKhachHangs.ToList();
             foreach (var item in khachHangs)
             {
                 txtHoTen.Text = item.KhachHang.HoTen;

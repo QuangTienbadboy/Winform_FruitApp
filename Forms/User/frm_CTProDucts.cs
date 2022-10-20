@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FruitApp.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using baithi.Models;
 namespace baithi
 {
 
@@ -22,7 +22,7 @@ namespace baithi
         private void CTSanPham_Load(object sender, EventArgs e)
         {
             
-            TraiCay item = ctx.TraiCay.FirstOrDefault(p=>p.MaTraiCay == layMa);
+            TraiCay item = ctx.TraiCays.FirstOrDefault(p=>p.MaTraiCay == layMa);
                 pictureBox1.Image = Image.FromFile(item.HinhAnh);
                 txtGia.Text = item.GiaBan.ToString();
                 txtMoTa.Text = item.MoTa;

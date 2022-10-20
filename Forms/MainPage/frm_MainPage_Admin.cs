@@ -96,5 +96,10 @@ namespace FruitApp
             this.Owner.Show();
             this.Close();
         }
+
+        private void frm_MainPage_Admin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
