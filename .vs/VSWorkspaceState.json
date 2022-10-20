@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Forms",
+    "\\Forms\\Login"
   ],
   "SelectedNode": "\\FruitApp.sln",
   "PreviewInSolutionExplorer": false

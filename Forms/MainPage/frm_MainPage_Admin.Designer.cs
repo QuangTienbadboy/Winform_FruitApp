@@ -29,11 +29,17 @@
         private void InitializeComponent()
         {
             this.tstr_Admin = new System.Windows.Forms.ToolStrip();
+            this.tsbtn_ManageProduct = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbtn_ManageOrder = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbtn_ManageSuplier = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbtn_ManageEmployee = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbtn_ManageUserAccount = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbtn_Exit = new System.Windows.Forms.ToolStripButton();
             this.tsbtn_Statistic = new System.Windows.Forms.ToolStripButton();
             this.mnstr_Admin = new System.Windows.Forms.MenuStrip();
             this.mnstr_System_Admin = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,12 +52,6 @@
             this.tsmenu_Exit = new System.Windows.Forms.ToolStripMenuItem();
             this.mnstr_Statistic = new System.Windows.Forms.ToolStripMenuItem();
             this.mnstr_Help = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsbtn_ManageProduct = new System.Windows.Forms.ToolStripButton();
-            this.tsbtn_ManageOrder = new System.Windows.Forms.ToolStripButton();
-            this.tsbtn_ManageSuplier = new System.Windows.Forms.ToolStripButton();
-            this.tsbtn_ManageEmployee = new System.Windows.Forms.ToolStripButton();
-            this.tsbtn_ManageUserAccount = new System.Windows.Forms.ToolStripButton();
-            this.tsbtn_Exit = new System.Windows.Forms.ToolStripButton();
             this.tstr_Admin.SuspendLayout();
             this.mnstr_Admin.SuspendLayout();
             this.SuspendLayout();
@@ -78,30 +78,97 @@
             this.tstr_Admin.TabIndex = 0;
             this.tstr_Admin.Text = "toolStrip1";
             // 
+            // tsbtn_ManageProduct
+            // 
+            this.tsbtn_ManageProduct.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.tsbtn_ManageProduct.Image = global::FruitApp.Properties.Resources.icons8_fruit_58;
+            this.tsbtn_ManageProduct.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtn_ManageProduct.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtn_ManageProduct.Name = "tsbtn_ManageProduct";
+            this.tsbtn_ManageProduct.Size = new System.Drawing.Size(229, 68);
+            this.tsbtn_ManageProduct.Text = "Sản Phẩm";
+            this.tsbtn_ManageProduct.Click += new System.EventHandler(this.tsbtn_ManageProduct_Click);
+            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 71);
+            // 
+            // tsbtn_ManageOrder
+            // 
+            this.tsbtn_ManageOrder.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.tsbtn_ManageOrder.Image = global::FruitApp.Properties.Resources.icons8_shopping_cart_48;
+            this.tsbtn_ManageOrder.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtn_ManageOrder.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtn_ManageOrder.Name = "tsbtn_ManageOrder";
+            this.tsbtn_ManageOrder.Size = new System.Drawing.Size(224, 68);
+            this.tsbtn_ManageOrder.Text = "Đơn Hàng";
+            this.tsbtn_ManageOrder.Click += new System.EventHandler(this.tsbtn_ManageOrder_Click);
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
             this.toolStripSeparator7.Size = new System.Drawing.Size(6, 71);
             // 
+            // tsbtn_ManageSuplier
+            // 
+            this.tsbtn_ManageSuplier.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.tsbtn_ManageSuplier.Image = global::FruitApp.Properties.Resources.icons8_bussiness_man_64;
+            this.tsbtn_ManageSuplier.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtn_ManageSuplier.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtn_ManageSuplier.Name = "tsbtn_ManageSuplier";
+            this.tsbtn_ManageSuplier.Size = new System.Drawing.Size(196, 68);
+            this.tsbtn_ManageSuplier.Text = "Đối Tác";
+            this.tsbtn_ManageSuplier.Click += new System.EventHandler(this.tsbtn_ManageSuplier_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 71);
+            // 
+            // tsbtn_ManageEmployee
+            // 
+            this.tsbtn_ManageEmployee.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.tsbtn_ManageEmployee.Image = global::FruitApp.Properties.Resources.icons8_employees_64;
+            this.tsbtn_ManageEmployee.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtn_ManageEmployee.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtn_ManageEmployee.Name = "tsbtn_ManageEmployee";
+            this.tsbtn_ManageEmployee.Size = new System.Drawing.Size(243, 68);
+            this.tsbtn_ManageEmployee.Text = "Nhân Viên";
+            this.tsbtn_ManageEmployee.Click += new System.EventHandler(this.tsbtn_ManageEmployee_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 71);
             // 
+            // tsbtn_ManageUserAccount
+            // 
+            this.tsbtn_ManageUserAccount.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.tsbtn_ManageUserAccount.Image = global::FruitApp.Properties.Resources.icons8_user_48;
+            this.tsbtn_ManageUserAccount.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtn_ManageUserAccount.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtn_ManageUserAccount.Name = "tsbtn_ManageUserAccount";
+            this.tsbtn_ManageUserAccount.Size = new System.Drawing.Size(252, 68);
+            this.tsbtn_ManageUserAccount.Text = "Khách Hàng";
+            this.tsbtn_ManageUserAccount.Click += new System.EventHandler(this.tsbtn_ManageUserAccount_Click);
+            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 71);
+            // 
+            // tsbtn_Exit
+            // 
+            this.tsbtn_Exit.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsbtn_Exit.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.tsbtn_Exit.Image = global::FruitApp.Properties.Resources.icons8_close_48;
+            this.tsbtn_Exit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtn_Exit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtn_Exit.Name = "tsbtn_Exit";
+            this.tsbtn_Exit.Size = new System.Drawing.Size(158, 52);
+            this.tsbtn_Exit.Text = "Thoát";
+            this.tsbtn_Exit.Click += new System.EventHandler(this.tsbtn_Exit_Click);
             // 
             // tsbtn_Statistic
             // 
@@ -213,73 +280,6 @@
             this.mnstr_Help.Size = new System.Drawing.Size(67, 32);
             this.mnstr_Help.Text = "Help";
             // 
-            // tsbtn_ManageProduct
-            // 
-            this.tsbtn_ManageProduct.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.tsbtn_ManageProduct.Image = global::FruitApp.Properties.Resources.icons8_fruit_58;
-            this.tsbtn_ManageProduct.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbtn_ManageProduct.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtn_ManageProduct.Name = "tsbtn_ManageProduct";
-            this.tsbtn_ManageProduct.Size = new System.Drawing.Size(229, 68);
-            this.tsbtn_ManageProduct.Text = "Sản Phẩm";
-            this.tsbtn_ManageProduct.Click += new System.EventHandler(this.tsbtn_ManageProduct_Click);
-            // 
-            // tsbtn_ManageOrder
-            // 
-            this.tsbtn_ManageOrder.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.tsbtn_ManageOrder.Image = global::FruitApp.Properties.Resources.icons8_shopping_cart_48;
-            this.tsbtn_ManageOrder.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbtn_ManageOrder.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtn_ManageOrder.Name = "tsbtn_ManageOrder";
-            this.tsbtn_ManageOrder.Size = new System.Drawing.Size(224, 68);
-            this.tsbtn_ManageOrder.Text = "Đơn Hàng";
-            this.tsbtn_ManageOrder.Click += new System.EventHandler(this.tsbtn_ManageOrder_Click);
-            // 
-            // tsbtn_ManageSuplier
-            // 
-            this.tsbtn_ManageSuplier.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.tsbtn_ManageSuplier.Image = global::FruitApp.Properties.Resources.icons8_bussiness_man_64;
-            this.tsbtn_ManageSuplier.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbtn_ManageSuplier.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtn_ManageSuplier.Name = "tsbtn_ManageSuplier";
-            this.tsbtn_ManageSuplier.Size = new System.Drawing.Size(196, 68);
-            this.tsbtn_ManageSuplier.Text = "Đối Tác";
-            this.tsbtn_ManageSuplier.Click += new System.EventHandler(this.tsbtn_ManageSuplier_Click);
-            // 
-            // tsbtn_ManageEmployee
-            // 
-            this.tsbtn_ManageEmployee.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.tsbtn_ManageEmployee.Image = global::FruitApp.Properties.Resources.icons8_employees_64;
-            this.tsbtn_ManageEmployee.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbtn_ManageEmployee.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtn_ManageEmployee.Name = "tsbtn_ManageEmployee";
-            this.tsbtn_ManageEmployee.Size = new System.Drawing.Size(243, 68);
-            this.tsbtn_ManageEmployee.Text = "Nhân Viên";
-            this.tsbtn_ManageEmployee.Click += new System.EventHandler(this.tsbtn_ManageEmployee_Click);
-            // 
-            // tsbtn_ManageUserAccount
-            // 
-            this.tsbtn_ManageUserAccount.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.tsbtn_ManageUserAccount.Image = global::FruitApp.Properties.Resources.icons8_user_48;
-            this.tsbtn_ManageUserAccount.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbtn_ManageUserAccount.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtn_ManageUserAccount.Name = "tsbtn_ManageUserAccount";
-            this.tsbtn_ManageUserAccount.Size = new System.Drawing.Size(252, 68);
-            this.tsbtn_ManageUserAccount.Text = "Khách Hàng";
-            this.tsbtn_ManageUserAccount.Click += new System.EventHandler(this.tsbtn_ManageUserAccount_Click);
-            // 
-            // tsbtn_Exit
-            // 
-            this.tsbtn_Exit.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsbtn_Exit.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.tsbtn_Exit.Image = global::FruitApp.Properties.Resources.icons8_close_48;
-            this.tsbtn_Exit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbtn_Exit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtn_Exit.Name = "tsbtn_Exit";
-            this.tsbtn_Exit.Size = new System.Drawing.Size(158, 52);
-            this.tsbtn_Exit.Text = "Thoát";
-            this.tsbtn_Exit.Click += new System.EventHandler(this.tsbtn_Exit_Click);
-            // 
             // frm_MainPage_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -292,6 +292,7 @@
             this.Name = "frm_MainPage_Admin";
             this.Text = "Quản Lý";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm_MainPage_Admin_FormClosed);
             this.Load += new System.EventHandler(this.frm_MainPage_Admin_Load);
             this.tstr_Admin.ResumeLayout(false);
             this.tstr_Admin.PerformLayout();
