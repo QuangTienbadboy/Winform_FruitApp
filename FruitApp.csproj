@@ -183,6 +183,12 @@
     <Compile Include="Forms\User\frm_CTProDucts.Designer.cs">
       <DependentUpon>frm_CTProDucts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\User\frm_DonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\frm_DonHang.Designer.cs">
+      <DependentUpon>frm_DonHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\User\frm_Information.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +206,12 @@
     </Compile>
     <Compile Include="Forms\User\frm_RePassWord.Designer.cs">
       <DependentUpon>frm_RePassWord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\frn_DiaChi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\frn_DiaChi.Designer.cs">
+      <DependentUpon>frn_DiaChi.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\ChiTietDonHang.cs" />
     <Compile Include="Models\ChiTietDonHangReport.cs" />

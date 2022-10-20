@@ -36,5 +36,10 @@ namespace baithi
             this.Owner.Show();
             this.Hide();
         }
+
+        private void btnMua_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

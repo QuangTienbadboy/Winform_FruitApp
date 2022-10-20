@@ -21,6 +21,10 @@ namespace baithi
 
         private void button1_Click(object sender, EventArgs e)
         {
+            frm_RePassWord f = new frm_RePassWord();
+            f.Owner = this;
+            f.Show();
+            this.Hide();
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -49,7 +53,15 @@ namespace baithi
 
         private void button2_Click(object sender, EventArgs e)
         {
-            new frm_ReInformation().Show();
+            frm_ReInformation f = new frm_ReInformation();
+            f.Owner = this;
+            f.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Owner.Show();
             this.Hide();
         }
     }

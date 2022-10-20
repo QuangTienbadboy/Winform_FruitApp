@@ -128,6 +128,8 @@ namespace baithi
                     pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
                     txtTen2.Text = tr.TenTraiCay + " " + tr.DonViTinh;
                     txtGia2.Text = tr.GiaBan.ToString();
+                    btnXem2.Visible = true;
+                    btnMua2.Visible = true;
                     if (dem == lct.Count-1)
                     {
 
@@ -148,6 +150,8 @@ namespace baithi
                     pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
                     txtTen3.Text = tr.TenTraiCay + " " + tr.DonViTinh;
                     txtGia3.Text = tr.GiaBan.ToString();
+                    btnMua3.Visible = true;
+                    btnXem3.Visible = true;
                     if (dem == lct.Count-1)
                     {
                         btnXem4.Visible = false;
@@ -163,6 +167,8 @@ namespace baithi
                     pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
                     txtTen4.Text = tr.TenTraiCay + " " + tr.DonViTinh;
                     txtGia4.Text = tr.GiaBan.ToString();
+                    btnXem4.Visible = true;
+                    btnMua4.Visible = true;
                 }
                 dem++;
 
@@ -309,6 +315,52 @@ namespace baithi
         private void btnMua4_Click(object sender, EventArgs e)
         {
             f.ThemSP(Ma4);
+        }
+
+        private void đăngXuấtToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Owner.Show();
+            this.Hide();
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Information f = new frm_Information();
+            f.Owner = this;
+            f.Show();
+            this.Hide();
+        }
+
+        private void btnGioHang_Click_1(object sender, EventArgs e)
+        {
+            f.Owner = this;
+            f.matk = matk;
+            f.Show();
+            this.Hide();
+        }
+
+        private void btnMua2_Click_1(object sender, EventArgs e)
+        {
+            f.ThemSP(Ma2);
+        }
+
+        private void btnMua4_Click_1(object sender, EventArgs e)
+        {
+            f.ThemSP(Ma4);
+        }
+
+        private void btnMua3_Click_1(object sender, EventArgs e)
+        {
+            f.ThemSP(Ma3);
+        }
+
+        private void đơnHàngCủaTôiToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            frm_Donhang f = new frm_Donhang();
+            f.Owner = this;
+            f.matk = matk;
+            f.Show();
+            this.Hide();
         }
     }
 }

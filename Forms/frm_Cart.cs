@@ -39,18 +39,18 @@ namespace FruitApp
         }
 
 
-       
-        
 
-        
 
-        //           private void btxoa_click(object sender, eventargs e)
-        //            {
-        //        if (MessageBox.Show("Bạn Có Muốn Xóa Mặt Hàng Này Không!", "Xóa Mặt Hàng Này!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) ;
-        //        {
-        //         DataGW1.Rows.RemoveAt(SelectedRow);
-        //        }
-        //}
+
+
+
+        private void btxoa_click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn Có Muốn Xóa Mặt Hàng Này Không!", "Xóa Mặt Hàng Này!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                DataGW1.Rows.RemoveAt(SelectedRow);
+            }
+        }
 
 
         private void ThongTin()
@@ -110,17 +110,11 @@ namespace FruitApp
             }
             return s;
         }
-        private void Form1_Load(object sender, EventArgs e)
+        internal void Form1_Load(object sender, EventArgs e)
         {
             
-            DataGW1.AllowUserToAddRows = false;
 
-            int sum = 0;
-            for (int i = 0; i <= DataGW1.Rows.Count - 1; i++)
-            {
-                sum = sum + int.Parse(DataGW1.Rows[i].Cells[3].Value.ToString());
-            }
-            txtTongTien.Text = sum.ToString();
+            
 
 
         }
@@ -139,41 +133,49 @@ namespace FruitApp
             ptAnh.Image = Image.FromFile(tc.HinhAnh);
         }
 
-        private void btxoa_click(object sender, EventArgs e)
-        {
-
-            DataGW1.Rows.RemoveAt(SelectedRow);
-            ThongTin();
-
-
-
-        }
+  
         internal void ThemSP(string matraicay)
         {
-            FruitAppContext ctx = new FruitAppContext();
-            TraiCay tc = ctx.TraiCays.FirstOrDefault(p => p.MaTraiCay == matraicay);
-            int selectedrow = -1;
+            try
+            {
+                FruitAppContext ctx = new FruitAppContext();
+                TraiCay tc = ctx.TraiCays.FirstOrDefault(p => p.MaTraiCay == matraicay);
+                int selectedrow = -1;
+                for (int i = 0; i < DataGW1.Rows.Count - 1; i++)
+                {
+                    if (DataGW1.Rows[i].Cells[0].Value.ToString() == tc.MaTraiCay)
+                    {
+                        selectedrow = i;
+                    }
 
-            for(int i = 0;i<DataGW1.Rows.Count-1;i++)
-            {
-                if (DataGW1.Rows[i].Cells[0].Value.ToString() ==tc.MaTraiCay)
-                    selectedrow = i;
-
+                }
+                if (selectedrow == -1)
+                {
+                    int index = DataGW1.Rows.Add();
+                    DataGW1.Rows[index].Cells[0].Value = tc.MaTraiCay;
+                    DataGW1.Rows[index].Cells[1].Value = tc.TenTraiCay;
+                    DataGW1.Rows[index].Cells[2].Value = "1";
+                    DataGW1.Rows[index].Cells[3].Value = tc.GiaBan.ToString();
+                }
+                else
+                {
+                    DataGW1.Rows[selectedrow].Cells[2].Value = (int.Parse(DataGW1.Rows[selectedrow].Cells[2].Value.ToString()) + 1).ToString();
+                    DataGW1.Rows[selectedrow].Cells[3].Value = (int.Parse(DataGW1.Rows[selectedrow].Cells[2].Value.ToString()) * tc.GiaBan).ToString();
+                }
+                int sum = 0;
+                for (int i = 0; i <= DataGW1.Rows.Count - 2; i++)
+                {
+                    sum = sum + int.Parse(DataGW1.Rows[i].Cells[3].Value.ToString());
+                }
+                txtTongTien.Text = sum.ToString();
             }
-            MessageBox.Show(selectedrow.ToString());
-            if(selectedrow == -1)
+            catch(Exception ex)
             {
-                int index = DataGW1.Rows.Add();
-                DataGW1.Rows[index].Cells[0].Value=tc.MaTraiCay;
-                DataGW1.Rows[index].Cells[1].Value = tc.TenTraiCay;
-                DataGW1.Rows[index].Cells[2].Value = "1";
-                DataGW1.Rows[index].Cells[3].Value = tc.GiaBan.ToString();
-            }
-            else
-            {
-                DataGW1.Rows[selectedrow].Cells[2].Value= (int.Parse(DataGW1.Rows[selectedrow].Cells[2].Value.ToString())+1).ToString();
+                MessageBox.Show(ex.Message, "Thông Báo");
             }
         }
+
+        internal string matk;
 
         private void btDatHang_Click(object sender, EventArgs e)
         {
@@ -190,7 +192,7 @@ namespace FruitApp
                 DonHang DH = new DonHang()
                 {
                     MaDonHang = MDH,
-                    MaTaiKhoan = "US0005",
+                    MaTaiKhoan = matk,
                     NgayDatHang = DateTime.Now,
                     ThanhTien = int.Parse(txtTongTien.Text),
                     TrangThai = "Chờ Xác Nhận",
@@ -231,7 +233,7 @@ namespace FruitApp
         private void button1_Click(object sender, EventArgs e)
         {
             this.Owner.Show();
-            this.Close();
+            this.Hide();
         }
 
 

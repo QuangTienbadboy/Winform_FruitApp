@@ -32,7 +32,7 @@
             this.đơnHàngCủaTôiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.thôngTinCủaTôiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đăngXuấtToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMua = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnXem = new System.Windows.Forms.Button();
@@ -86,8 +86,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.đơnHàngCủaTôiToolStripMenuItem,
-            this.tàiKhoảnToolStripMenuItem,
-            this.thôngTinCủaTôiToolStripMenuItem});
+            this.tàiKhoảnToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1067, 28);
@@ -100,11 +99,13 @@
             this.đơnHàngCủaTôiToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F10;
             this.đơnHàngCủaTôiToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
             this.đơnHàngCủaTôiToolStripMenuItem.Text = "Đơn Hàng Của Tôi";
+            this.đơnHàngCủaTôiToolStripMenuItem.Click += new System.EventHandler(this.đơnHàngCủaTôiToolStripMenuItem_Click_1);
             // 
             // tàiKhoảnToolStripMenuItem
             // 
             this.tàiKhoảnToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.đăngXuấtToolStripMenuItem});
+            this.đăngXuấtToolStripMenuItem,
+            this.đăngXuấtToolStripMenuItem1});
             this.tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
             this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
             this.tàiKhoảnToolStripMenuItem.Text = "Tài Khoản";
@@ -113,21 +114,23 @@
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
             this.đăngXuấtToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D3)));
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
-            this.đăngXuấtToolStripMenuItem.Text = "Đăng Xuất";
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(261, 26);
+            this.đăngXuấtToolStripMenuItem.Text = "Thông Tin Của Tôi";
+            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
-            // thôngTinCủaTôiToolStripMenuItem
+            // đăngXuấtToolStripMenuItem1
             // 
-            this.thôngTinCủaTôiToolStripMenuItem.Name = "thôngTinCủaTôiToolStripMenuItem";
-            this.thôngTinCủaTôiToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F11;
-            this.thôngTinCủaTôiToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
-            this.thôngTinCủaTôiToolStripMenuItem.Text = "Thông Tin Của Tôi";
+            this.đăngXuấtToolStripMenuItem1.Name = "đăngXuấtToolStripMenuItem1";
+            this.đăngXuấtToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D4)));
+            this.đăngXuấtToolStripMenuItem1.Size = new System.Drawing.Size(261, 26);
+            this.đăngXuấtToolStripMenuItem1.Text = "Đăng Xuất";
+            this.đăngXuấtToolStripMenuItem1.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem1_Click);
             // 
             // btnMua
             // 
             this.btnMua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnMua.Location = new System.Drawing.Point(181, 230);
-            this.btnMua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMua.Margin = new System.Windows.Forms.Padding(4);
             this.btnMua.Name = "btnMua";
             this.btnMua.Size = new System.Drawing.Size(100, 28);
             this.btnMua.TabIndex = 4;
@@ -139,7 +142,7 @@
             // txtTimKiem
             // 
             this.txtTimKiem.Location = new System.Drawing.Point(681, 33);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(263, 22);
             this.txtTimKiem.TabIndex = 7;
@@ -149,7 +152,7 @@
             // 
             this.btnXem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnXem.Location = new System.Drawing.Point(300, 230);
-            this.btnXem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXem.Margin = new System.Windows.Forms.Padding(4);
             this.btnXem.Name = "btnXem";
             this.btnXem.Size = new System.Drawing.Size(100, 28);
             this.btnXem.TabIndex = 44;
@@ -180,7 +183,7 @@
             // txtGia2
             // 
             this.txtGia2.Location = new System.Drawing.Point(44, 127);
-            this.txtGia2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGia2.Margin = new System.Windows.Forms.Padding(4);
             this.txtGia2.Name = "txtGia2";
             this.txtGia2.Size = new System.Drawing.Size(132, 22);
             this.txtGia2.TabIndex = 12;
@@ -188,7 +191,7 @@
             // txtTen2
             // 
             this.txtTen2.Location = new System.Drawing.Point(44, 95);
-            this.txtTen2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTen2.Margin = new System.Windows.Forms.Padding(4);
             this.txtTen2.Name = "txtTen2";
             this.txtTen2.Size = new System.Drawing.Size(132, 22);
             this.txtTen2.TabIndex = 10;
@@ -196,7 +199,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Location = new System.Drawing.Point(44, 26);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(133, 62);
             this.pictureBox2.TabIndex = 9;
@@ -210,7 +213,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(475, 65);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(243, 158);
             this.panel2.TabIndex = 47;
@@ -223,7 +226,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(181, 65);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(243, 158);
             this.panel1.TabIndex = 48;
@@ -231,7 +234,7 @@
             // txtGia1
             // 
             this.txtGia1.Location = new System.Drawing.Point(43, 127);
-            this.txtGia1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGia1.Margin = new System.Windows.Forms.Padding(4);
             this.txtGia1.Name = "txtGia1";
             this.txtGia1.Size = new System.Drawing.Size(132, 22);
             this.txtGia1.TabIndex = 19;
@@ -240,7 +243,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pictureBox1.Location = new System.Drawing.Point(44, 17);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(133, 62);
             this.pictureBox1.TabIndex = 9;
@@ -249,7 +252,7 @@
             // txtTen1
             // 
             this.txtTen1.Location = new System.Drawing.Point(44, 95);
-            this.txtTen1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTen1.Margin = new System.Windows.Forms.Padding(4);
             this.txtTen1.Name = "txtTen1";
             this.txtTen1.Size = new System.Drawing.Size(132, 22);
             this.txtTen1.TabIndex = 10;
@@ -282,7 +285,7 @@
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Location = new System.Drawing.Point(181, 282);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(243, 158);
             this.panel3.TabIndex = 48;
@@ -291,7 +294,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox3.Location = new System.Drawing.Point(44, 26);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(133, 62);
             this.pictureBox3.TabIndex = 9;
@@ -300,7 +303,7 @@
             // txtTen3
             // 
             this.txtTen3.Location = new System.Drawing.Point(44, 95);
-            this.txtTen3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTen3.Margin = new System.Windows.Forms.Padding(4);
             this.txtTen3.Name = "txtTen3";
             this.txtTen3.Size = new System.Drawing.Size(132, 22);
             this.txtTen3.TabIndex = 10;
@@ -308,7 +311,7 @@
             // txtGia3
             // 
             this.txtGia3.Location = new System.Drawing.Point(44, 127);
-            this.txtGia3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGia3.Margin = new System.Windows.Forms.Padding(4);
             this.txtGia3.Name = "txtGia3";
             this.txtGia3.Size = new System.Drawing.Size(132, 22);
             this.txtGia3.TabIndex = 12;
@@ -341,7 +344,7 @@
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Location = new System.Drawing.Point(475, 282);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(243, 158);
             this.panel4.TabIndex = 48;
@@ -350,7 +353,7 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pictureBox4.Location = new System.Drawing.Point(44, 26);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(133, 62);
             this.pictureBox4.TabIndex = 9;
@@ -359,7 +362,7 @@
             // txtTen4
             // 
             this.txtTen4.Location = new System.Drawing.Point(44, 95);
-            this.txtTen4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTen4.Margin = new System.Windows.Forms.Padding(4);
             this.txtTen4.Name = "txtTen4";
             this.txtTen4.Size = new System.Drawing.Size(132, 22);
             this.txtTen4.TabIndex = 10;
@@ -367,7 +370,7 @@
             // txtGia4
             // 
             this.txtGia4.Location = new System.Drawing.Point(44, 127);
-            this.txtGia4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGia4.Margin = new System.Windows.Forms.Padding(4);
             this.txtGia4.Name = "txtGia4";
             this.txtGia4.Size = new System.Drawing.Size(132, 22);
             this.txtGia4.TabIndex = 12;
@@ -397,7 +400,7 @@
             this.cbb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb.FormattingEnabled = true;
             this.cbb.Location = new System.Drawing.Point(16, 65);
-            this.cbb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbb.Margin = new System.Windows.Forms.Padding(4);
             this.cbb.Name = "cbb";
             this.cbb.Size = new System.Drawing.Size(160, 24);
             this.cbb.TabIndex = 49;
@@ -407,7 +410,7 @@
             // 
             this.btnXem2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnXem2.Location = new System.Drawing.Point(601, 230);
-            this.btnXem2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXem2.Margin = new System.Windows.Forms.Padding(4);
             this.btnXem2.Name = "btnXem2";
             this.btnXem2.Size = new System.Drawing.Size(100, 28);
             this.btnXem2.TabIndex = 51;
@@ -419,19 +422,20 @@
             // 
             this.btnMua2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnMua2.Location = new System.Drawing.Point(483, 230);
-            this.btnMua2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMua2.Margin = new System.Windows.Forms.Padding(4);
             this.btnMua2.Name = "btnMua2";
             this.btnMua2.Size = new System.Drawing.Size(100, 28);
             this.btnMua2.TabIndex = 50;
             this.btnMua2.Text = "Mua Ngay";
             this.btnMua2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnMua2.UseVisualStyleBackColor = true;
+            this.btnMua2.Click += new System.EventHandler(this.btnMua2_Click_1);
             // 
             // btnXem3
             // 
             this.btnXem3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnXem3.Location = new System.Drawing.Point(300, 460);
-            this.btnXem3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXem3.Margin = new System.Windows.Forms.Padding(4);
             this.btnXem3.Name = "btnXem3";
             this.btnXem3.Size = new System.Drawing.Size(100, 28);
             this.btnXem3.TabIndex = 53;
@@ -443,19 +447,20 @@
             // 
             this.btnMua3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnMua3.Location = new System.Drawing.Point(181, 460);
-            this.btnMua3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMua3.Margin = new System.Windows.Forms.Padding(4);
             this.btnMua3.Name = "btnMua3";
             this.btnMua3.Size = new System.Drawing.Size(100, 28);
             this.btnMua3.TabIndex = 52;
             this.btnMua3.Text = "Mua Ngay";
             this.btnMua3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnMua3.UseVisualStyleBackColor = true;
+            this.btnMua3.Click += new System.EventHandler(this.btnMua3_Click_1);
             // 
             // btnXem4
             // 
             this.btnXem4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnXem4.Location = new System.Drawing.Point(599, 460);
-            this.btnXem4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXem4.Margin = new System.Windows.Forms.Padding(4);
             this.btnXem4.Name = "btnXem4";
             this.btnXem4.Size = new System.Drawing.Size(100, 28);
             this.btnXem4.TabIndex = 55;
@@ -467,19 +472,20 @@
             // 
             this.btnMua4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnMua4.Location = new System.Drawing.Point(480, 460);
-            this.btnMua4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMua4.Margin = new System.Windows.Forms.Padding(4);
             this.btnMua4.Name = "btnMua4";
             this.btnMua4.Size = new System.Drawing.Size(100, 28);
             this.btnMua4.TabIndex = 54;
             this.btnMua4.Text = "Mua Ngay";
             this.btnMua4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnMua4.UseVisualStyleBackColor = true;
+            this.btnMua4.Click += new System.EventHandler(this.btnMua4_Click_1);
             // 
             // btnTimKiem
             // 
             this.btnTimKiem.ForeColor = System.Drawing.Color.Lime;
             this.btnTimKiem.Location = new System.Drawing.Point(539, 30);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(100, 28);
             this.btnTimKiem.TabIndex = 56;
@@ -490,13 +496,14 @@
             // btnGioHang
             // 
             this.btnGioHang.Location = new System.Drawing.Point(832, 103);
-            this.btnGioHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGioHang.Margin = new System.Windows.Forms.Padding(4);
             this.btnGioHang.Name = "btnGioHang";
             this.btnGioHang.Size = new System.Drawing.Size(100, 28);
             this.btnGioHang.TabIndex = 57;
             this.btnGioHang.Text = "Giỏ Hàng";
             this.btnGioHang.UseMnemonic = false;
             this.btnGioHang.UseVisualStyleBackColor = true;
+            this.btnGioHang.Click += new System.EventHandler(this.btnGioHang_Click_1);
             // 
             // label3
             // 
@@ -532,7 +539,7 @@
             this.Controls.Add(this.btnMua);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_MainPage_User";
             this.Text = "frm_MainPage_User";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm_MainPage_User_FormClosed);
@@ -564,7 +571,6 @@
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private System.Windows.Forms.Button btnMua;
         private System.Windows.Forms.TextBox txtTimKiem;
-        private System.Windows.Forms.ToolStripMenuItem thôngTinCủaTôiToolStripMenuItem;
         private System.Windows.Forms.Button btnXem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -600,6 +606,7 @@
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Button btnGioHang;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem1;
     }
 }
 

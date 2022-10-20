@@ -1,5 +1,4 @@
-
-using FruitApp.Models;
+﻿using FruitApp.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +14,6 @@ namespace DoAn
 {
     public partial class frm_Donhang : Form
     {
-        SqlConnection con;
         public frm_Donhang()
         {
             InitializeComponent();
@@ -60,7 +58,7 @@ namespace DoAn
             }
         }
 
-       
+
 
         private void frm_Donhang_Load(object sender, EventArgs e)
         {

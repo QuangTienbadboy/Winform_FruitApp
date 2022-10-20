@@ -292,7 +292,6 @@
             this.Name = "frm_MainPage_Admin";
             this.Text = "Quản Lý";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm_MainPage_Admin_FormClosed);
             this.Load += new System.EventHandler(this.frm_MainPage_Admin_Load);
             this.tstr_Admin.ResumeLayout(false);
             this.tstr_Admin.PerformLayout();
