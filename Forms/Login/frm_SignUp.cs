@@ -187,7 +187,7 @@ namespace FruitApp
             try
             {
                 smtp.Send(message);
-                MessageBox.Show("Code Send Successfully");
+                MessageBox.Show("Code Send Successfully va ton tai 5 phut");
                 txtDangKyEmail.Enabled = false;
                 var action = new Action(() =>
                 {

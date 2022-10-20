@@ -149,7 +149,7 @@ namespace FruitApp
 
                 SetTimeout(action, 300000);
                 smtp.Send(message);
-                MessageBox.Show("Code Send Successfully");
+                MessageBox.Show("Code Send Successfully va ton tai 5 phut");
                 txtQuenTaiKhoan.Enabled = false;
                 
 
