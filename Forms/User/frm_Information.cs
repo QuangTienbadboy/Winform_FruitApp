@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FruitApp.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using baithi.Models;
 namespace baithi
 {
     
@@ -29,7 +29,7 @@ namespace baithi
         public void load()
         {
            
-            List<TaiKhoanKhachHang> khachHangs = ctx.TaiKhoanKhachHang.ToList();
+            List<TaiKhoanKhachHang> khachHangs = ctx.TaiKhoanKhachHangs.ToList();
             foreach (var item in khachHangs)
             {
                 txtHoTen.Text = item.KhachHang.HoTen;

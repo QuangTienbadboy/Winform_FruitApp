@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using baithi.Models;
-                
+using FruitApp.Models;
+
 namespace baithi
 {
     public partial class frm_MainPage_User : Form
@@ -25,7 +25,7 @@ namespace baithi
             loadcbb();
             cbb.SelectedIndex = 0;
             FruitAppContext ctx = new FruitAppContext();
-            List<TraiCay> lct = ctx.TraiCay.Where(b=>b.SoLuongTonKho>0).ToList();
+            List<TraiCay> lct = ctx.TraiCays.Where(b=>b.SoLuongTonKho>0).ToList();
             loadsanpham(0,lct);
 
                 
@@ -168,7 +168,7 @@ namespace baithi
         private void loadcbb()
         {
             FruitAppContext ctx = new FruitAppContext();
-            List<TraiCay> lct = ctx.TraiCay.Where(b => b.SoLuongTonKho > 0).ToList();
+            List<TraiCay> lct = ctx.TraiCays.Where(b => b.SoLuongTonKho > 0).ToList();
             if(lct.Count %4 != 0)
             {
                 int trang= lct.Count / 4 +1;
@@ -197,7 +197,7 @@ namespace baithi
             else
             {
                 FruitAppContext ctx = new FruitAppContext();
-                List<TraiCay> lct = ctx.TraiCay.Where(b => b.SoLuongTonKho > 0).ToList();
+                List<TraiCay> lct = ctx.TraiCays.Where(b => b.SoLuongTonKho > 0).ToList();
                 loadsanpham(int.Parse(cbb.Text[cbb.Text.Length-1].ToString())-1,lct);
             }
         }
@@ -211,7 +211,7 @@ namespace baithi
         {
 
             FruitAppContext ctx = new FruitAppContext();
-            List<TraiCay> lct = ctx.TraiCay.Where(b => b.SoLuongTonKho > 0).ToList();
+            List<TraiCay> lct = ctx.TraiCays.Where(b => b.SoLuongTonKho > 0).ToList();
             if (txtTimKiem.Text != "")
             {
                 lct = lct.Where(x => x.TenTraiCay.ToLower().Contains(txtTimKiem.Text.ToLower())).ToList();
@@ -269,6 +269,11 @@ namespace baithi
         private void btnMua_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void frm_MainPage_User_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
