@@ -20,7 +20,7 @@ namespace DoAn
         private void button2_Click(object sender, EventArgs e)
         {
             t = 0;
-            MessageBox.Show("Bạn có muốn thoát không"," ",MessageBoxButtons.OK );
+            MessageBox.Show("Bạn có muốn thoát không", " ", MessageBoxButtons.OK);
             this.Close();
         }
         internal int t = 0;
@@ -39,7 +39,7 @@ namespace DoAn
                     throw new Exception("Bạn cần nhập địa chỉ");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Thông Báo");
             }
@@ -52,7 +52,7 @@ namespace DoAn
 
         private void DiaChi_Load(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
