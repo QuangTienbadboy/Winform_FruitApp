@@ -188,6 +188,7 @@ namespace FruitApp
             {
                 smtp.Send(message);
                 MessageBox.Show("Code Send Successfully");
+                txtDangKyEmail.Enabled = false;
                 var action = new Action(() =>
                 {
                     randomCode = "";

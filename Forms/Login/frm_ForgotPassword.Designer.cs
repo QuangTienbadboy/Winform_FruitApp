@@ -137,6 +137,7 @@ namespace FruitApp
             this.txtNhapLaiMatKhauMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNhapLaiMatKhauMoi.Location = new System.Drawing.Point(278, 95);
             this.txtNhapLaiMatKhauMoi.Name = "txtNhapLaiMatKhauMoi";
+            this.txtNhapLaiMatKhauMoi.PasswordChar = '*';
             this.txtNhapLaiMatKhauMoi.Size = new System.Drawing.Size(320, 30);
             this.txtNhapLaiMatKhauMoi.TabIndex = 23;
             // 
@@ -157,6 +158,7 @@ namespace FruitApp
             this.txtMatKhauMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatKhauMoi.Location = new System.Drawing.Point(278, 44);
             this.txtMatKhauMoi.Name = "txtMatKhauMoi";
+            this.txtMatKhauMoi.PasswordChar = '*';
             this.txtMatKhauMoi.Size = new System.Drawing.Size(320, 30);
             this.txtMatKhauMoi.TabIndex = 21;
             // 
